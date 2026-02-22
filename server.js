@@ -9,6 +9,10 @@ const DATA_PATH = path.join(__dirname, 'data', 'snacks.json');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/admin', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 const readSnacks = () => JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 const writeSnacks = snacks => fs.writeFileSync(DATA_PATH, JSON.stringify(snacks, null, 2));
 
