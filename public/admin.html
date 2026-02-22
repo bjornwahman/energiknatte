@@ -153,19 +153,36 @@
     }
 
     function renderList() {
+      recipesEl.innerHTML = '';
+
       if (!snacks.length) {
         recipesEl.innerHTML = '<p>Inga recept ännu.</p>';
         return;
       }
-      recipesEl.innerHTML = snacks.map(snack => `
-        <div class="recipe-row">
-          <div>
-            <strong>${snack.name}</strong><br />
-            <small>${snack.time} · ${snack.energy}</small>
-          </div>
-          <button data-name="${encodeURIComponent(snack.name)}">Ta bort</button>
-        </div>
-      `).join('');
+
+      const fragment = document.createDocumentFragment();
+
+      snacks.forEach(snack => {
+        const row = document.createElement('div');
+        row.className = 'recipe-row';
+
+        const details = document.createElement('div');
+        const title = document.createElement('strong');
+        title.textContent = snack.name;
+        const meta = document.createElement('small');
+        meta.textContent = `${snack.time} · ${snack.energy}`;
+        details.append(title, document.createElement('br'), meta);
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.name = snack.name;
+        button.textContent = 'Ta bort';
+
+        row.append(details, button);
+        fragment.appendChild(row);
+      });
+
+      recipesEl.appendChild(fragment);
     }
 
     recipesEl.addEventListener('click', async (event) => {
@@ -173,7 +190,7 @@
       if (!button) return;
       const name = button.dataset.name;
       if (!confirm('Ta bort detta recept?')) return;
-      const res = await fetch(`/api/snacks/${name}`, { method: 'DELETE' });
+      const res = await fetch(`/api/snacks/${encodeURIComponent(name)}`, { method: 'DELETE' });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         alert(data.error || 'Kunde inte ta bort recept');
@@ -215,6 +232,23 @@
       await loadSnacks();
     });
 
+    async function waitForServerToRestart({ retries = 20, intervalMs = 1500 } = {}) {
+      for (let attempt = 1; attempt <= retries; attempt += 1) {
+        try {
+          const health = await fetch('/health', { cache: 'no-store' });
+          if (health.ok) {
+            return true;
+          }
+        } catch (_error) {
+          // Förväntat medan servern är nere under omstart.
+        }
+
+        await new Promise(resolve => setTimeout(resolve, intervalMs));
+      }
+
+      return false;
+    }
+
     restartButton.addEventListener('click', async () => {
       restartButton.disabled = true;
       restartStatus.textContent = 'Skickar omstarts-signal...';
@@ -225,12 +259,17 @@
           const data = await res.json().catch(() => ({}));
           throw new Error(data.error || 'Kunde inte starta om appen');
         }
-
-        restartStatus.textContent = 'Servern startar om nu. Vänta ett par sekunder och ladda sidan igen.';
+        restartStatus.textContent = 'Servern startar om... väntar på att den kommer upp igen.';
       } catch (error) {
-        restartButton.disabled = false;
-        restartStatus.textContent = error.message;
+        // Om anslutningen bryts direkt efter signalen är det oftast ett tecken på att omstarten faktiskt startade.
+        restartStatus.textContent = `Omstart initierad (${error.message}). Väntar på servern...`;
       }
+
+      const isBack = await waitForServerToRestart();
+      restartButton.disabled = false;
+      restartStatus.textContent = isBack
+        ? 'Webappen är igång igen ✅'
+        : 'Servern är fortfarande nere. Vänta lite och försök igen.';
     });
 
     loadSnacks();

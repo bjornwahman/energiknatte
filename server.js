@@ -58,7 +58,7 @@ app.post('/api/snacks', (req, res) => {
 });
 
 app.delete('/api/snacks/:name', (req, res) => {
-  const target = decodeURIComponent(req.params.name || '').toLowerCase();
+  const target = String(req.params.name || '').trim().toLowerCase();
   if (!target) {
     return res.status(400).json({ error: 'Namnet saknas' });
   }
