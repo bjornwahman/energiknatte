@@ -93,6 +93,16 @@
       padding: 0.4rem 1rem;
       cursor: pointer;
     }
+    .restart-button {
+      border: none;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #ff9f1c, #ff4d6d);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -117,6 +127,12 @@
         <h2>Befintliga recept</h2>
         <div id="recipes"></div>
       </div>
+      <div class="admin-card">
+        <h2>Webapp</h2>
+        <p>Starta om servern om du behöver ladda om appen efter ändringar.</p>
+        <button id="restart-app" type="button" class="restart-button">Starta om webappen</button>
+        <p id="restart-status"></p>
+      </div>
     </section>
   </main>
 
@@ -124,6 +140,8 @@
     const form = document.getElementById('create-form');
     const recipesEl = document.getElementById('recipes');
     const statusEl = document.getElementById('form-status');
+    const restartButton = document.getElementById('restart-app');
+    const restartStatus = document.getElementById('restart-status');
     let snacks = [];
 
     const splitLines = value => value.split('\n').map(line => line.trim()).filter(Boolean);
@@ -195,6 +213,24 @@
       form.reset();
       statusEl.textContent = 'Receptet sparades!';
       await loadSnacks();
+    });
+
+    restartButton.addEventListener('click', async () => {
+      restartButton.disabled = true;
+      restartStatus.textContent = 'Skickar omstarts-signal...';
+
+      try {
+        const res = await fetch('/api/admin/restart', { method: 'POST' });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Kunde inte starta om appen');
+        }
+
+        restartStatus.textContent = 'Servern startar om nu. Vänta ett par sekunder och ladda sidan igen.';
+      } catch (error) {
+        restartButton.disabled = false;
+        restartStatus.textContent = error.message;
+      }
     });
 
     loadSnacks();

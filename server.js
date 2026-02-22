@@ -74,6 +74,14 @@ app.delete('/api/snacks/:name', (req, res) => {
   res.json({ ok: true });
 });
 
+app.post('/api/admin/restart', (_req, res) => {
+  res.json({ ok: true, message: 'Startar om appen...' });
+
+  setTimeout(() => {
+    process.exit(0);
+  }, 150);
+});
+
 app.get('/health', (_req, res) => {
   const snacks = readSnacks();
   res.json({ status: 'ok', count: snacks.length, time: new Date().toISOString() });
