@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Recept</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      background: radial-gradient(circle at top, #2a165a, #05060f 70%);
+      color: #fff;
+      font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .admin-panel {
+      width: min(1100px, 100%);
+    }
+    .admin-panel h1 {
+      margin-top: 0;
+      font-family: 'Fredoka', sans-serif;
+    }
+    .admin-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .admin-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 60px rgba(5, 10, 20, 0.4);
+    }
+    .admin-card h2 {
+      margin-top: 0;
+      font-family: 'Fredoka', sans-serif;
+    }
+    form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(7, 9, 18, 0.9);
+      color: inherit;
+      font: inherit;
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+    }
+    form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    form button {
+      border: none;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #7fe7dc, #4f7cff);
+      color: #061026;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    #recipes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 520px;
+      overflow: auto;
+    }
+    .recipe-row {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .recipe-row button {
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 77, 109, 0.15);
+      color: #ff4d6d;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="admin-panel">
+    <h1>Admin · Recept</h1>
+    <section class="admin-grid">
+      <form id="create-form" class="admin-card">
+        <h2>Lägg till recept</h2>
+        <label>Namn<input name="name" required /></label>
+        <label>Energi (t.ex. 340 kcal)<input name="energy" required /></label>
+        <label>Boost<input name="boost" required /></label>
+        <label>Tid<input name="time" required /></label>
+        <label>Typ (quick/batch)<input name="kind" required /></label>
+        <label>Färg (t.ex. #ffbe0b)<input name="color" value="#ffbe0b" required /></label>
+        <label>Mood(s) – kommaseparerat<input name="moods" placeholder="sött,crunch" required /></label>
+        <label>Ingredienser (en per rad)<textarea name="ingredients" required></textarea></label>
+        <label>Instruktioner (en per rad)<textarea name="instructions" required></textarea></label>
+        <button type="submit">Spara recept</button>
+        <p id="form-status"></p>
+      </form>
+      <div class="admin-card">
+        <h2>Befintliga recept</h2>
+        <div id="recipes"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('create-form');
+    const recipesEl = document.getElementById('recipes');
+    const statusEl = document.getElementById('form-status');
+    let snacks = [];
+
+    const splitLines = value => value.split('\n').map(line => line.trim()).filter(Boolean);
+
+    async function loadSnacks() {
+      const res = await fetch('/api/snacks');
+      snacks = await res.json();
+      renderList();
+    }
+
+    function renderList() {
+      if (!snacks.length) {
+        recipesEl.innerHTML = '<p>Inga recept ännu.</p>';
+        return;
+      }
+      recipesEl.innerHTML = snacks.map(snack => `
+        <div class="recipe-row">
+          <div>
+            <strong>${snack.name}</strong><br />
+            <small>${snack.time} · ${snack.energy}</small>
+          </div>
+          <button data-name="${encodeURIComponent(snack.name)}">Ta bort</button>
+        </div>
+      `).join('');
+    }
+
+    recipesEl.addEventListener('click', async (event) => {
+      const button = event.target.closest('button[data-name]');
+      if (!button) return;
+      const name = button.dataset.name;
+      if (!confirm('Ta bort detta recept?')) return;
+      const res = await fetch(`/api/snacks/${name}`, { method: 'DELETE' });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        alert(data.error || 'Kunde inte ta bort recept');
+        return;
+      }
+      await loadSnacks();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.textContent = 'Sparar...';
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name').trim(),
+        energy: formData.get('energy').trim(),
+        boost: formData.get('boost').trim(),
+        time: formData.get('time').trim(),
+        kind: formData.get('kind').trim(),
+        color: formData.get('color').trim(),
+        moods: formData.get('moods').split(',').map(v => v.trim()).filter(Boolean),
+        ingredients: splitLines(formData.get('ingredients')),
+        instructions: splitLines(formData.get('instructions'))
+      };
+
+      const res = await fetch('/api/snacks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        statusEl.textContent = data.error || 'Kunde inte spara receptet';
+        return;
+      }
+
+      form.reset();
+      statusEl.textContent = 'Receptet sparades!';
+      await loadSnacks();
+    });
+
+    loadSnacks();
+  </script>
+</body>
+</html>

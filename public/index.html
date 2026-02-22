@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energiknatte – mellanmål för ADHD-hjärnor</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="pill">Boost mode</p>
+      <h1>Energiknatte</h1>
+      <p class="subtitle">Snabba mellanmål med hjärnbränsle för barn med ADHD.</p>
+      <div class="cta-row">
+        <button id="random-btn">Ge mig ett mellanmål!</button>
+        <button id="prep-btn" class="ghost">Visa batch-favoriter</button>
+      </div>
+    </div>
+    <img src="/mascot.svg" alt="Raketsnacks" />
+  </header>
+
+  <section class="filters">
+    <label>
+      <span>Tillagningstid</span>
+      <select id="time-filter">
+        <option value="all">Alla</option>
+        <option value="quick">Under 5 min</option>
+        <option value="batch">Förbereds/batch</option>
+      </select>
+    </label>
+    <label>
+      <span>Smakprofil</span>
+      <select id="mood-filter">
+        <option value="all">Alla</option>
+        <option value="sött">Söt & krämig</option>
+        <option value="salt">Salt & matigt</option>
+        <option value="crunch">Crunchy/knaprigt</option>
+      </select>
+    </label>
+    <button id="favorites-toggle" class="favorites-toggle" type="button">Visa favoriter</button>
+  </section>
+
+  <section id="snack-grid" class="snack-grid" aria-live="polite"></section>
+
+  <template id="snack-card-template">
+    <article class="snack-card">
+      <button class="favorite-btn" type="button" aria-label="Markera som favorit">♡</button>
+      <p class="time"></p>
+      <h2></h2>
+      <p class="energy"></p>
+      <p class="boost"></p>
+      <ul class="ingredients"></ul>
+      <h3>Gör så här</h3>
+      <ol class="instructions"></ol>
+    </article>
+  </template>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
