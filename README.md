@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/publiclogo-energiknatte-new.png" width="300" alt="Energiknatte logo">
+</p>
+
 # Energiknatte – ADHD-vänliga mellanmål
 
 Färgglad Node/Express-app som serverar mellanmålsförslag med fokus på energirika, näringstäta snacks för barn med ADHD.
