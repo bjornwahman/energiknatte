@@ -48,9 +48,14 @@ body {
 }
 .cta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
   margin-top: 1.5rem;
+}
+
+.cta-row button {
+  min-width: 240px;
 }
 button {
   border: none;
@@ -141,7 +146,7 @@ select {
 @media (max-width: 780px) {
   body { padding: 1.5rem; }
   .hero { flex-direction: column; text-align: center; }
-  .cta-row { justify-content: center; }
+  .cta-row { align-items: center; }
 }
 .snack-card h3 {
   margin: 1rem 0 0.4rem;
@@ -193,27 +198,6 @@ select {
 }
 
 
-.favorites-toggle {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-  color: #fff;
-  padding: 0.7rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
-}
-
-.favorites-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.favorites-toggle.is-active {
-  background: linear-gradient(120deg, #ffbe0b, #ff006e);
-  border-color: transparent;
-  color: #0b0f19;
-}
 
 .grid-placeholder {
   text-align: center;
