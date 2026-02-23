@@ -1,4912 +1,1207 @@
 [
   {
-    "name": "bananboost med nötsvirvel – hallondamm-twist",
-    "energy": "320 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
+    "name": "Chokladboll med espresso & valnötter",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 tsk espressopulver",
+      "1 msk honung",
+      "1 msk jordnötssmör",
+      "1 msk hackade valnötter",
+      "1 msk kokos"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#5a3a2e",
+    "instructions": [
+      "Blanda havregryn, kakao och espressopulver.",
+      "Rör ner honung och jordnötssmör.",
+      "Arbeta in valnötter.",
+      "Forma till bollar och rulla i kokos."
+    ]
+  },
+  {
+    "name": "Banan-quesadilla med mandelsmör",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 fullkornstortilla",
       "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Topping: fryst hallondamm"
+      "2 msk mandelsmör",
+      "1 msk mörk choklad",
+      "1 tsk smör till stekning"
     ],
-    "time": "3 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – citrus-swirlad",
-    "energy": "324 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – kokos-crunch",
-    "energy": "328 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – matcha-damm",
-    "energy": "332 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Dust: matchagranulat"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – kakaolime-boost",
-    "energy": "336 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#3a86ff",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – blåbärschia-swirl",
-    "energy": "340 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ff4d6d",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – solroskola-topp",
-    "energy": "344 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#06d6a0",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – pistageknaster",
-    "energy": "348 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – passionshonung",
-    "energy": "352 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "bananboost med nötsvirvel – kanel-flingsalt",
-    "energy": "356 kcal",
-    "boost": "Kalium + nyttiga fetter för jämn energi",
-    "ingredients": [
-      "1 stor banan",
-      "2 msk krämigt jordnötssmör",
-      "1 msk chiafrön",
-      "1 tsk kakaonibs",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Skala bananen och skiva den i 1 cm tjocka bitar.",
-      "Lägg skivorna på ett fat eller en tallrik.",
-      "Bred jordnötssmör på varje skiva och strö över chiafrön.",
-      "Toppa med kakaonibs och servera direkt eller kyl i 5 minuter för extra crunch."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – hallondamm-twist",
-    "energy": "290 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#b5179e",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – citrus-swirlad",
-    "energy": "294 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#7209b7",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – kokos-crunch",
-    "energy": "298 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – matcha-damm",
-    "energy": "302 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Dust: matchagranulat"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#4361ee",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – kakaolime-boost",
-    "energy": "306 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#4895ef",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – blåbärschia-swirl",
-    "energy": "310 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#80ffdb",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – solroskola-topp",
-    "energy": "314 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#64dfdf",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – pistageknaster",
-    "energy": "318 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#48bfe3",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – passionshonung",
-    "energy": "322 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#5390d9",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "havre-yoghurt swirl – kanel-flingsalt",
-    "energy": "326 kcal",
-    "boost": "Protein + långsamma kolhydrater för hållbar mättnad",
-    "ingredients": [
-      "2 dl grekisk yoghurt 4%",
-      "0.75 dl havregryn",
-      "0.5 dl frysta blåbär",
-      "1 tsk honung",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "5 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#5e60ce",
-    "instructions": [
-      "Rör ihop yoghurt och havregryn i en skål.",
-      "Tina de frysta blåbären lätt (20 sek i mikro) om du vill undvika iskristaller.",
-      "Vänd ner blåbären i yoghurten och ringla över honungen.",
-      "Servera direkt eller låt svälla 5 minuter för mjukare havre."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – hallondamm-twist",
-    "energy": "350 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#ffb703",
     "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
+      "Bred mandelsmör på tortillan.",
+      "Lägg på skivad banan och choklad.",
+      "Vik ihop och stek gyllene i smör 2 min per sida.",
+      "Skär i trekanter."
     ]
   },
   {
-    "name": "quesadilla med ost & bönor – citrus-swirlad",
-    "energy": "354 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
+    "name": "Avokadotoast med ägg & frön",
+    "energy": "470 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Ringla: citrusyoghurt"
+      "1 grov brödskiva",
+      "1/2 avokado",
+      "1 stekt ägg",
+      "1 msk pumpafrön",
+      "Flingsalt"
     ],
-    "time": "7 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#fb8500",
+    "color": "#2a9d8f",
     "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
+      "Rosta brödet.",
+      "Mosa avokado och bred på.",
+      "Toppa med stekt ägg och frön.",
+      "Salta lätt."
     ]
   },
   {
-    "name": "quesadilla med ost & bönor – kokos-crunch",
-    "energy": "358 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
+    "name": "Proteinrik blåbärssmoothie deluxe",
+    "energy": "440 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Crunch: rostade kokoschips"
+      "1 dl grekisk yoghurt 10%",
+      "1 dl blåbär",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 msk havregryn"
     ],
-    "time": "7 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#8ecae6",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – matcha-damm",
-    "energy": "362 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Dust: matchagranulat"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#219ebc",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – kakaolime-boost",
-    "energy": "366 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffccd5",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – blåbärschia-swirl",
-    "energy": "370 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#cdb4db",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – solroskola-topp",
-    "energy": "374 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – pistageknaster",
-    "energy": "378 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#bde0fe",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – passionshonung",
-    "energy": "382 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "quesadilla med ost & bönor – kanel-flingsalt",
-    "energy": "386 kcal",
-    "boost": "B-vitaminer och fiber för hjärnfokus",
-    "ingredients": [
-      "1 fullkornstortilla 20 cm",
-      "0.75 dl svarta bönor, sköljda",
-      "0.75 dl riven ost",
-      "2 msk majs",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "7 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffafcc",
-    "instructions": [
-      "Värm en torr stekpanna på medelhög värme.",
-      "Lägg tortillan i pannan och strö ost, bönor och majs över halva ytan.",
-      "Vik tortillan dubbel och stek 2–3 minuter per sida tills osten smälter.",
-      "Skär i trekanter och servera med valfri dip."
-    ]
-  },
-  {
-    "name": "trail mix raketer – hallondamm-twist",
-    "energy": "360 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – citrus-swirlad",
-    "energy": "364 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – kokos-crunch",
-    "energy": "368 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – matcha-damm",
-    "energy": "372 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Dust: matchagranulat"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – kakaolime-boost",
-    "energy": "376 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#3a86ff",
     "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
+      "Mixa samtliga ingredienser slätt.",
+      "Servera direkt i stort glas."
     ]
   },
   {
-    "name": "trail mix raketer – blåbärschia-swirl",
-    "energy": "380 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
+    "name": "Havrepannkaka med jordnötssås",
+    "energy": "540 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff4d6d",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – solroskola-topp",
-    "energy": "384 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#06d6a0",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – pistageknaster",
-    "energy": "388 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – passionshonung",
-    "energy": "392 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "trail mix raketer – kanel-flingsalt",
-    "energy": "396 kcal",
-    "boost": "Snabb energi + omega 3 från nötter och frön",
-    "ingredients": [
-      "3 msk mandlar",
-      "2 msk pumpafrön",
-      "2 msk torkad mango i bitar",
-      "1 msk mörka chokladknappar",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "1 min",
-    "moods": [
-      "crunch",
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Hacka mandlarna grovt om du vill ha mindre bitar.",
-      "Blanda alla ingredienser i en liten burk eller skål.",
-      "Rosta snabbt i torr panna 1 minut för extra smak (valfritt).",
-      "Ät direkt eller ta med som on-the-go-snack."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – hallondamm-twist",
-    "energy": "305 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#b5179e",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – citrus-swirlad",
-    "energy": "309 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#7209b7",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – kokos-crunch",
-    "energy": "313 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – matcha-damm",
-    "energy": "317 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Dust: matchagranulat"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4361ee",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – kakaolime-boost",
-    "energy": "321 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4895ef",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – blåbärschia-swirl",
-    "energy": "325 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#80ffdb",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – solroskola-topp",
-    "energy": "329 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#64dfdf",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – pistageknaster",
-    "energy": "333 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#48bfe3",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – passionshonung",
-    "energy": "337 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#5390d9",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "riskakor med avokadokross – kanel-flingsalt",
-    "energy": "341 kcal",
-    "boost": "Kombination av bra fetter och knaprig textur",
-    "ingredients": [
-      "2 fullkornsriskakor",
-      "1/2 mogen avokado",
-      "1 tsk limejuice",
-      "1 nypa chiliflakes",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "4 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#5e60ce",
-    "instructions": [
-      "Mosa avokadon med limejuice i en liten skål.",
-      "Salta lätt och smaksätt med chiliflakes.",
-      "Bred avokadokrossen på riskakorna.",
-      "Toppa med extra chiliflakes eller frön om du vill."
-    ]
-  },
-  {
-    "name": "power muffins med morot – hallondamm-twist",
-    "energy": "250 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
+      "1 dl havregryn",
       "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Topping: fryst hallondamm"
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 tsk smör"
     ],
-    "time": "15 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
-    "kind": "batch",
-    "color": "#ffb703",
+    "kind": "quick",
+    "color": "#e76f51",
     "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
+      "Mixa havre, ägg och banan.",
+      "Stek små pannkakor i smör.",
+      "Ringla jordnötssmör ovanpå."
     ]
   },
   {
-    "name": "power muffins med morot – citrus-swirlad",
-    "energy": "254 kcal",
-    "boost": "Järn + protein i förberedd batch",
+    "name": "Yoghurtparfait med granola & honung",
+    "energy": "390 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
+      "1,5 dl grekisk yoghurt",
+      "0,5 dl granola",
+      "1 msk honung",
+      "1 msk chiafrön",
+      "0,5 dl hallon"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#5a3a2e",
+    "instructions": [
+      "Varva yoghurt och granola i glas.",
+      "Toppa med honung, chiafrön och hallon."
+    ]
+  },
+  {
+    "name": "Muggkaka choklad-protein",
+    "energy": "530 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
       "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#fb8500",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – kokos-crunch",
-    "energy": "258 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#8ecae6",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – matcha-damm",
-    "energy": "262 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Dust: matchagranulat"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#219ebc",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – kakaolime-boost",
-    "energy": "266 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#ffccd5",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – blåbärschia-swirl",
-    "energy": "270 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#cdb4db",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – solroskola-topp",
-    "energy": "274 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – pistageknaster",
-    "energy": "278 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#bde0fe",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – passionshonung",
-    "energy": "282 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "power muffins med morot – kanel-flingsalt",
-    "energy": "286 kcal",
-    "boost": "Järn + protein i förberedd batch",
-    "ingredients": [
-      "1.5 dl havregryn",
-      "1 dl riven morot",
-      "1 ägg",
-      "0.5 dl osötat äppelmos",
-      "0.5 tsk kanel",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "15 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#ffafcc",
-    "instructions": [
-      "Sätt ugnen på 190 °C och klä en minimuffinsplåt.",
-      "Blanda alla ingredienser i en skål till en tjock smet.",
-      "Fördela smeten i 8–10 formar (fyll till 3/4).",
-      "Grädda 12–14 minuter, låt svalna och förvara i kyl upp till 4 dagar."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – hallondamm-twist",
-    "energy": "315 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – citrus-swirlad",
-    "energy": "319 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – kokos-crunch",
-    "energy": "323 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – matcha-damm",
-    "energy": "327 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Dust: matchagranulat"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – kakaolime-boost",
-    "energy": "331 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#3a86ff",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – blåbärschia-swirl",
-    "energy": "335 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ff4d6d",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – solroskola-topp",
-    "energy": "339 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#06d6a0",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – pistageknaster",
-    "energy": "343 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – passionshonung",
-    "energy": "347 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "äppelskivor med tahini-karamell – kanel-flingsalt",
-    "energy": "351 kcal",
-    "boost": "Balans mellan sött och salt + magnesium",
-    "ingredients": [
-      "1 äpple i klyftor",
-      "2 msk tahini",
-      "1 msk dadelsirap",
-      "1 tsk rostade sesamfrön",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Skär äpplet i tunna klyftor eller ringar.",
-      "Vispa ihop tahini och dadelsirap till en sås.",
-      "Doppa eller ringla såsen över äpplet.",
-      "Strö över sesamfrön precis innan servering."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – hallondamm-twist",
-    "energy": "295 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
+      "2 msk havremjöl",
       "1 msk kakao",
-      "1 msk lönnsirap",
-      "Topping: fryst hallondamm"
+      "1 msk honung",
+      "1 msk jordnötssmör"
     ],
-    "time": "förbereds kvällen innan",
+    "time": "5–15 min",
     "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#b5179e",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – citrus-swirlad",
-    "energy": "299 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#7209b7",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – kokos-crunch",
-    "energy": "303 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – matcha-damm",
-    "energy": "307 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Dust: matchagranulat"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#4361ee",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – kakaolime-boost",
-    "energy": "311 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#4895ef",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – blåbärschia-swirl",
-    "energy": "315 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#80ffdb",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – solroskola-topp",
-    "energy": "319 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#64dfdf",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – pistageknaster",
-    "energy": "323 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#48bfe3",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – passionshonung",
-    "energy": "327 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#5390d9",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "chokladig chia deluxe – kanel-flingsalt",
-    "energy": "331 kcal",
-    "boost": "Omega 3 och magnesium för lugn fokus",
-    "ingredients": [
-      "3 msk chiafrön",
-      "2.5 dl havremjölk",
-      "1 msk kakao",
-      "1 msk lönnsirap",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#5e60ce",
-    "instructions": [
-      "Vispa ihop havremjölk, kakao och lönnsirap i en burk.",
-      "Rör ner chiafrön och låt stå 10 minuter, rör igen så att klumpar försvinner.",
-      "Ställ i kyl över natten.",
-      "Toppa med frukt eller kokos på morgonen."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – hallondamm-twist",
-    "energy": "300 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#ffb703",
     "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
+      "Blanda allt i mugg.",
+      "Mikra 60–90 sek tills fast.",
+      "Låt svalna lätt och ät."
     ]
   },
   {
-    "name": "grön smoothie rocket – citrus-swirlad",
-    "energy": "304 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
+    "name": "Äpple fylld med nötkräm & granola",
+    "energy": "450 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Ringla: citrusyoghurt"
+      "1 stort äpple",
+      "2 msk mandelsmör",
+      "1 msk granola",
+      "1 tsk honung"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#fb8500",
+    "color": "#2a9d8f",
     "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
+      "Gröp ur kärnhuset.",
+      "Fyll med mandelsmör.",
+      "Toppa med granola och honung."
     ]
   },
   {
-    "name": "grön smoothie rocket – kokos-crunch",
-    "energy": "308 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
+    "name": "Energibar med dadlar & kakao",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Crunch: rostade kokoschips"
+      "3 färska dadlar",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 msk kokosolja",
+      "1 msk pumpafrön"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#8ecae6",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – matcha-damm",
-    "energy": "312 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Dust: matchagranulat"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#219ebc",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – kakaolime-boost",
-    "energy": "316 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffccd5",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – blåbärschia-swirl",
-    "energy": "320 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#cdb4db",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – solroskola-topp",
-    "energy": "324 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – pistageknaster",
-    "energy": "328 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#bde0fe",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – passionshonung",
-    "energy": "332 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "grön smoothie rocket – kanel-flingsalt",
-    "energy": "336 kcal",
-    "boost": "Snabbt grönsaksintag plus protein",
-    "ingredients": [
-      "2 dl spenat",
-      "1 kiwi utan skal",
-      "1 dl ananas i bitar",
-      "1 dl naturell yoghurt",
-      "0.5 dl vatten",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "4 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffafcc",
-    "instructions": [
-      "Lägg alla ingredienser i en blender.",
-      "Mixa 30–40 sekunder tills konsistensen är helt slät.",
-      "Justera tjockleken med mer vatten vid behov.",
-      "Servera iskall direkt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – hallondamm-twist",
-    "energy": "330 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – citrus-swirlad",
-    "energy": "334 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – kokos-crunch",
-    "energy": "338 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – matcha-damm",
-    "energy": "342 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Dust: matchagranulat"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – kakaolime-boost",
-    "energy": "346 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#3a86ff",
     "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
+      "Mixa allt till deg.",
+      "Pressa ut i form.",
+      "Kyl 15 min och skär i barer."
     ]
   },
   {
-    "name": "proteinplättar mini-stack – blåbärschia-swirl",
-    "energy": "350 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
+    "name": "Kesobowl med mango & kokos",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Swirl: blåbärschia-kompott"
+      "1,5 dl keso",
+      "0,5 dl mango",
+      "1 msk kokosflingor",
+      "1 msk mandlar",
+      "1 tsk honung"
     ],
-    "time": "8 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#ff4d6d",
+    "color": "#e76f51",
     "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
+      "Lägg keso i skål.",
+      "Toppa med mango, kokos, mandlar och honung."
     ]
   },
   {
-    "name": "proteinplättar mini-stack – solroskola-topp",
-    "energy": "354 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
+    "name": "Chokladboll med espresso & valnötter",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Topp: karamelliserade solrosfrön"
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 tsk espressopulver",
+      "1 msk honung",
+      "1 msk jordnötssmör",
+      "1 msk hackade valnötter",
+      "1 msk kokos"
     ],
-    "time": "8 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#06d6a0",
+    "color": "#5a3a2e",
     "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
+      "Blanda havregryn, kakao och espressopulver.",
+      "Rör ner honung och jordnötssmör.",
+      "Arbeta in valnötter.",
+      "Forma till bollar och rulla i kokos."
     ]
   },
   {
-    "name": "proteinplättar mini-stack – pistageknaster",
-    "energy": "358 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
+    "name": "Banan-quesadilla med mandelsmör",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Extra crunch: krossade pistagenötter"
+      "1 fullkornstortilla",
+      "1 stor banan",
+      "2 msk mandelsmör",
+      "1 msk mörk choklad",
+      "1 tsk smör till stekning"
     ],
-    "time": "8 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – passionshonung",
-    "energy": "362 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "proteinplättar mini-stack – kanel-flingsalt",
-    "energy": "366 kcal",
-    "boost": "Ägg + havre ger långvarig energi",
-    "ingredients": [
-      "1 ägg",
-      "0.75 dl havregryn",
-      "0.5 banan",
-      "0.5 tsk bakpulver",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "8 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Mixa alla ingredienser till en jämn smet.",
-      "Hetta upp en liten stekpanna med lite smör eller kokosolja.",
-      "Stek små plättar (ca 2 msk smet) 1–2 minuter per sida.",
-      "Stapla på en tallrik och toppa med bär eller yoghurt."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – hallondamm-twist",
-    "energy": "310 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#b5179e",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – citrus-swirlad",
-    "energy": "314 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#7209b7",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – kokos-crunch",
-    "energy": "318 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – matcha-damm",
-    "energy": "322 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Dust: matchagranulat"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4361ee",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – kakaolime-boost",
-    "energy": "326 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4895ef",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – blåbärschia-swirl",
-    "energy": "330 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#80ffdb",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – solroskola-topp",
-    "energy": "334 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#64dfdf",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – pistageknaster",
-    "energy": "338 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#48bfe3",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – passionshonung",
-    "energy": "342 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#5390d9",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "edamame crunch-koppar – kanel-flingsalt",
-    "energy": "346 kcal",
-    "boost": "Proteinrikt snack med salt crunch",
-    "ingredients": [
-      "2 dl frysta edamame, tinade",
-      "1 tsk sesamolja",
-      "1 tsk soja",
-      "1 tsk rostade sesamfrön",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "6 min",
-    "moods": [
-      "salt",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#5e60ce",
-    "instructions": [
-      "Tina edamame (2 min i mikro eller i varmt vatten).",
-      "Blanda med sesamolja och soja i en skål.",
-      "Rosta lätt i torr panna 2 minuter för extra smak.",
-      "Strö över sesamfrön och servera i små koppar."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – hallondamm-twist",
-    "energy": "335 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#ffb703",
     "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
+      "Bred mandelsmör på tortillan.",
+      "Lägg på skivad banan och choklad.",
+      "Vik ihop och stek gyllene i smör 2 min per sida.",
+      "Skär i trekanter."
     ]
   },
   {
-    "name": "rostad kikärtsskål – citrus-swirlad",
-    "energy": "339 kcal",
-    "boost": "Fiber + protein = hållbar energi",
+    "name": "Avokadotoast med ägg & frön",
+    "energy": "470 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Ringla: citrusyoghurt"
+      "1 grov brödskiva",
+      "1/2 avokado",
+      "1 stekt ägg",
+      "1 msk pumpafrön",
+      "Flingsalt"
     ],
-    "time": "12 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#fb8500",
+    "color": "#2a9d8f",
     "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
+      "Rosta brödet.",
+      "Mosa avokado och bred på.",
+      "Toppa med stekt ägg och frön.",
+      "Salta lätt."
     ]
   },
   {
-    "name": "rostad kikärtsskål – kokos-crunch",
-    "energy": "343 kcal",
-    "boost": "Fiber + protein = hållbar energi",
+    "name": "Proteinrik blåbärssmoothie deluxe",
+    "energy": "440 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Crunch: rostade kokoschips"
+      "1 dl grekisk yoghurt 10%",
+      "1 dl blåbär",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 msk havregryn"
     ],
-    "time": "12 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#8ecae6",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – matcha-damm",
-    "energy": "347 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Dust: matchagranulat"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#219ebc",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – kakaolime-boost",
-    "energy": "351 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffccd5",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – blåbärschia-swirl",
-    "energy": "355 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#cdb4db",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – solroskola-topp",
-    "energy": "359 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – pistageknaster",
-    "energy": "363 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#bde0fe",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – passionshonung",
-    "energy": "367 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "rostad kikärtsskål – kanel-flingsalt",
-    "energy": "371 kcal",
-    "boost": "Fiber + protein = hållbar energi",
-    "ingredients": [
-      "2 dl kokta kikärter",
-      "1 msk olivolja",
-      "0.5 tsk rökt paprikapulver",
-      "1 tsk honung",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "12 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffafcc",
-    "instructions": [
-      "Sätt ugnen på 200 °C eller värm en airfryer.",
-      "Blanda kikärter med olja, paprikapulver och honung.",
-      "Rosta 10–12 minuter tills de är knapriga.",
-      "Låt svalna 2 minuter innan servering."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – hallondamm-twist",
-    "energy": "300 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – citrus-swirlad",
-    "energy": "304 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – kokos-crunch",
-    "energy": "308 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – matcha-damm",
-    "energy": "312 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Dust: matchagranulat"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – kakaolime-boost",
-    "energy": "316 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#3a86ff",
     "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
+      "Mixa samtliga ingredienser slätt.",
+      "Servera direkt i stort glas."
     ]
   },
   {
-    "name": "cottage cloud bowl – blåbärschia-swirl",
-    "energy": "320 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
+    "name": "Havrepannkaka med jordnötssås",
+    "energy": "540 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Swirl: blåbärschia-kompott"
+      "1 dl havregryn",
+      "1 ägg",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 tsk smör"
     ],
-    "time": "3 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "crunch"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#ff4d6d",
+    "color": "#e76f51",
     "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
+      "Mixa havre, ägg och banan.",
+      "Stek små pannkakor i smör.",
+      "Ringla jordnötssmör ovanpå."
     ]
   },
   {
-    "name": "cottage cloud bowl – solroskola-topp",
-    "energy": "324 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
+    "name": "Yoghurtparfait med granola & honung",
+    "energy": "390 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Topp: karamelliserade solrosfrön"
+      "1,5 dl grekisk yoghurt",
+      "0,5 dl granola",
+      "1 msk honung",
+      "1 msk chiafrön",
+      "0,5 dl hallon"
     ],
-    "time": "3 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "crunch"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#06d6a0",
+    "color": "#5a3a2e",
     "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
+      "Varva yoghurt och granola i glas.",
+      "Toppa med honung, chiafrön och hallon."
     ]
   },
   {
-    "name": "cottage cloud bowl – pistageknaster",
-    "energy": "328 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
+    "name": "Muggkaka choklad-protein",
+    "energy": "530 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Extra crunch: krossade pistagenötter"
+      "1 ägg",
+      "2 msk havremjöl",
+      "1 msk kakao",
+      "1 msk honung",
+      "1 msk jordnötssmör"
     ],
-    "time": "3 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – passionshonung",
-    "energy": "332 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "cottage cloud bowl – kanel-flingsalt",
-    "energy": "336 kcal",
-    "boost": "Kalciumrikt mellanmål med crunch",
-    "ingredients": [
-      "1.5 dl cottage cheese",
-      "0.5 dl granola",
-      "0.5 dl hallon",
-      "1 tsk pumpakärnor",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött",
-      "crunch"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Skeda upp cottage cheese i en skål.",
-      "Toppa med hallon och granola.",
-      "Strö över pumpakärnor.",
-      "Ät direkt eller ta med i burk."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – hallondamm-twist",
-    "energy": "340 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#b5179e",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – citrus-swirlad",
-    "energy": "344 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#7209b7",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – kokos-crunch",
-    "energy": "348 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – matcha-damm",
-    "energy": "352 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Dust: matchagranulat"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#4361ee",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – kakaolime-boost",
-    "energy": "356 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#4895ef",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – blåbärschia-swirl",
-    "energy": "360 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#80ffdb",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – solroskola-topp",
-    "energy": "364 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#64dfdf",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – pistageknaster",
-    "energy": "368 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#48bfe3",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – passionshonung",
-    "energy": "372 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#5390d9",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "wrap med kalkon & hummus – kanel-flingsalt",
-    "energy": "376 kcal",
-    "boost": "Protein och komplexa kolhydrater",
-    "ingredients": [
-      "1 fullkornswrap 20 cm",
-      "2 skivor kalkon",
-      "3 msk hummus",
-      "0.5 dl rivna morötter",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "5 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#5e60ce",
-    "instructions": [
-      "Bred hummus över hela wrapen.",
-      "Lägg på kalkon och rivna morötter.",
-      "Rulla ihop hårt och skär i bitar eller ät som rulle.",
-      "Packa i folie om den ska med i väskan."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – hallondamm-twist",
-    "energy": "285 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#ffb703",
     "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
+      "Blanda allt i mugg.",
+      "Mikra 60–90 sek tills fast.",
+      "Låt svalna lätt och ät."
     ]
   },
   {
-    "name": "granola cups med yoghurt – citrus-swirlad",
-    "energy": "289 kcal",
-    "boost": "Balans mellan crunch och krämigt",
+    "name": "Äpple fylld med nötkräm & granola",
+    "energy": "450 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Ringla: citrusyoghurt"
+      "1 stort äpple",
+      "2 msk mandelsmör",
+      "1 msk granola",
+      "1 tsk honung"
     ],
-    "time": "2 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#fb8500",
+    "color": "#2a9d8f",
     "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
+      "Gröp ur kärnhuset.",
+      "Fyll med mandelsmör.",
+      "Toppa med granola och honung."
     ]
   },
   {
-    "name": "granola cups med yoghurt – kokos-crunch",
-    "energy": "293 kcal",
-    "boost": "Balans mellan crunch och krämigt",
+    "name": "Energibar med dadlar & kakao",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Crunch: rostade kokoschips"
+      "3 färska dadlar",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 msk kokosolja",
+      "1 msk pumpafrön"
     ],
-    "time": "2 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#8ecae6",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – matcha-damm",
-    "energy": "297 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Dust: matchagranulat"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#219ebc",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – kakaolime-boost",
-    "energy": "301 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffccd5",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – blåbärschia-swirl",
-    "energy": "305 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#cdb4db",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – solroskola-topp",
-    "energy": "309 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – pistageknaster",
-    "energy": "313 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#bde0fe",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – passionshonung",
-    "energy": "317 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "granola cups med yoghurt – kanel-flingsalt",
-    "energy": "321 kcal",
-    "boost": "Balans mellan crunch och krämigt",
-    "ingredients": [
-      "0.75 dl granola",
-      "1 dl vaniljyoghurt",
-      "0.25 dl hackad mango",
-      "1 tsk hampafrön",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "2 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffafcc",
-    "instructions": [
-      "Fördela granola i två små skålar eller glas.",
-      "Toppa med vaniljyoghurt.",
-      "Strö över mango och hampafrön.",
-      "Servera direkt så granolan behåller sin crunch."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – hallondamm-twist",
-    "energy": "320 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – citrus-swirlad",
-    "energy": "324 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – kokos-crunch",
-    "energy": "328 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – matcha-damm",
-    "energy": "332 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Dust: matchagranulat"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – kakaolime-boost",
-    "energy": "336 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#3a86ff",
     "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
+      "Mixa allt till deg.",
+      "Pressa ut i form.",
+      "Kyl 15 min och skär i barer."
     ]
   },
   {
-    "name": "sötpotatis-toast med feta – blåbärschia-swirl",
-    "energy": "340 kcal",
-    "boost": "Betakaroten + protein",
+    "name": "Kesobowl med mango & kokos",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Swirl: blåbärschia-kompott"
+      "1,5 dl keso",
+      "0,5 dl mango",
+      "1 msk kokosflingor",
+      "1 msk mandlar",
+      "1 tsk honung"
     ],
-    "time": "10 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#ff4d6d",
+    "color": "#e76f51",
     "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
+      "Lägg keso i skål.",
+      "Toppa med mango, kokos, mandlar och honung."
     ]
   },
   {
-    "name": "sötpotatis-toast med feta – solroskola-topp",
-    "energy": "344 kcal",
-    "boost": "Betakaroten + protein",
+    "name": "Chokladboll med espresso & valnötter",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Topp: karamelliserade solrosfrön"
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 tsk espressopulver",
+      "1 msk honung",
+      "1 msk jordnötssmör",
+      "1 msk hackade valnötter",
+      "1 msk kokos"
     ],
-    "time": "10 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#06d6a0",
+    "color": "#5a3a2e",
     "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
+      "Blanda havregryn, kakao och espressopulver.",
+      "Rör ner honung och jordnötssmör.",
+      "Arbeta in valnötter.",
+      "Forma till bollar och rulla i kokos."
     ]
   },
   {
-    "name": "sötpotatis-toast med feta – pistageknaster",
-    "energy": "348 kcal",
-    "boost": "Betakaroten + protein",
+    "name": "Banan-quesadilla med mandelsmör",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Extra crunch: krossade pistagenötter"
+      "1 fullkornstortilla",
+      "1 stor banan",
+      "2 msk mandelsmör",
+      "1 msk mörk choklad",
+      "1 tsk smör till stekning"
     ],
-    "time": "10 min",
+    "time": "5–15 min",
     "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – passionshonung",
-    "energy": "352 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "sötpotatis-toast med feta – kanel-flingsalt",
-    "energy": "356 kcal",
-    "boost": "Betakaroten + protein",
-    "ingredients": [
-      "2 skivor rostad sötpotatis (1 cm)",
-      "2 msk färskost",
-      "2 msk smulad fetaost",
-      "1 tsk honung",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "10 min",
-    "moods": [
-      "sött",
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Rosta sötpotatisskivorna i brödrost eller ugn ca 5 minuter.",
-      "Bred färskost på varje skiva.",
-      "Smula över fetaost och ringla honung.",
-      "Avsluta med lite svartpeppar."
-    ]
-  },
-  {
-    "name": "overnight oats duo – hallondamm-twist",
-    "energy": "300 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#b5179e",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – citrus-swirlad",
-    "energy": "304 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#7209b7",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – kokos-crunch",
-    "energy": "308 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#3a0ca3",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – matcha-damm",
-    "energy": "312 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Dust: matchagranulat"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#4361ee",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – kakaolime-boost",
-    "energy": "316 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#4895ef",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – blåbärschia-swirl",
-    "energy": "320 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#80ffdb",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – solroskola-topp",
-    "energy": "324 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#64dfdf",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – pistageknaster",
-    "energy": "328 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#48bfe3",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – passionshonung",
-    "energy": "332 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#5390d9",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "overnight oats duo – kanel-flingsalt",
-    "energy": "336 kcal",
-    "boost": "Förberedd burk med fiber och protein",
-    "ingredients": [
-      "1 dl havregryn",
-      "1 dl mjölk eller växtdryck",
-      "0.5 dl kvarg",
-      "1 msk chiafrön",
-      "0.5 dl bär",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "förbereds kvällen innan",
-    "moods": [
-      "sött"
-    ],
-    "kind": "batch",
-    "color": "#5e60ce",
-    "instructions": [
-      "Blanda havregryn, mjölk, kvarg och chia i en burk.",
-      "Rör om ordentligt och toppa med bär.",
-      "Ställ i kyl minst 4 timmar eller över natten.",
-      "Ät kall eller värm snabbt i mikro."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – hallondamm-twist",
-    "energy": "345 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#ffb703",
     "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
+      "Bred mandelsmör på tortillan.",
+      "Lägg på skivad banan och choklad.",
+      "Vik ihop och stek gyllene i smör 2 min per sida.",
+      "Skär i trekanter."
     ]
   },
   {
-    "name": "mini pita pizzor – citrus-swirlad",
-    "energy": "349 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
+    "name": "Avokadotoast med ägg & frön",
+    "energy": "470 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Ringla: citrusyoghurt"
+      "1 grov brödskiva",
+      "1/2 avokado",
+      "1 stekt ägg",
+      "1 msk pumpafrön",
+      "Flingsalt"
     ],
-    "time": "9 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#fb8500",
+    "color": "#2a9d8f",
     "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
+      "Rosta brödet.",
+      "Mosa avokado och bred på.",
+      "Toppa med stekt ägg och frön.",
+      "Salta lätt."
     ]
   },
   {
-    "name": "mini pita pizzor – kokos-crunch",
-    "energy": "353 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
+    "name": "Proteinrik blåbärssmoothie deluxe",
+    "energy": "440 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Crunch: rostade kokoschips"
+      "1 dl grekisk yoghurt 10%",
+      "1 dl blåbär",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 msk havregryn"
     ],
-    "time": "9 min",
+    "time": "5–15 min",
     "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#8ecae6",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – matcha-damm",
-    "energy": "357 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Dust: matchagranulat"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#219ebc",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – kakaolime-boost",
-    "energy": "361 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffccd5",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – blåbärschia-swirl",
-    "energy": "365 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#cdb4db",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – solroskola-topp",
-    "energy": "369 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffc8dd",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – pistageknaster",
-    "energy": "373 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#bde0fe",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – passionshonung",
-    "energy": "377 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#a2d2ff",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "mini pita pizzor – kanel-flingsalt",
-    "energy": "381 kcal",
-    "boost": "Varmt mellanmål med järn och B12",
-    "ingredients": [
-      "1 mini pita 12 cm",
-      "2 msk tomatsås",
-      "0.5 dl riven ost",
-      "2 msk hackad paprika",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "9 min",
-    "moods": [
-      "salt"
-    ],
-    "kind": "quick",
-    "color": "#ffafcc",
-    "instructions": [
-      "Sätt ugnen på 220 °C (grillläge funkar också).",
-      "Bred tomatsås på pitabrödet och strö över ost och paprika.",
-      "Baka 6–7 minuter tills osten bubblar.",
-      "Skär i små trianglar och servera."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – hallondamm-twist",
-    "energy": "310 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Topping: fryst hallondamm"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ffbe0b",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – citrus-swirlad",
-    "energy": "314 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Ringla: citrusyoghurt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#fb5607",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – kokos-crunch",
-    "energy": "318 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Crunch: rostade kokoschips"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff006e",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – matcha-damm",
-    "energy": "322 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Dust: matchagranulat"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#8338ec",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – kakaolime-boost",
-    "energy": "326 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Boost: kakaonibs + limezest"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
     "color": "#3a86ff",
     "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
+      "Mixa samtliga ingredienser slätt.",
+      "Servera direkt i stort glas."
     ]
   },
   {
-    "name": "nötfri solrossmör-toast – blåbärschia-swirl",
-    "energy": "330 kcal",
-    "boost": "Nötfritt fett + fiber",
+    "name": "Havrepannkaka med jordnötssås",
+    "energy": "540 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Swirl: blåbärschia-kompott"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff4d6d",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – solroskola-topp",
-    "energy": "334 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Topp: karamelliserade solrosfrön"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#06d6a0",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – pistageknaster",
-    "energy": "338 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Extra crunch: krossade pistagenötter"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#ff9f1c",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – passionshonung",
-    "energy": "342 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Ringla: passionsfruktshonung"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#4cc9f0",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "nötfri solrossmör-toast – kanel-flingsalt",
-    "energy": "346 kcal",
-    "boost": "Nötfritt fett + fiber",
-    "ingredients": [
-      "1 skiva fullkornsbröd",
-      "1.5 msk solrossmör",
-      "5 skivor jordgubb",
-      "1 tsk hampafrön",
-      "Dust: kanel + flingsalt"
-    ],
-    "time": "3 min",
-    "moods": [
-      "sött"
-    ],
-    "kind": "quick",
-    "color": "#f72585",
-    "instructions": [
-      "Rosta brödet lätt om du vill.",
-      "Bred solrossmör över hela skivan.",
-      "Toppa med jordgubbsskivor.",
-      "Strö över hampafrön innan servering."
-    ]
-  },
-  {
-    "name": "frostig proteinshake – hallondamm-twist",
-    "energy": "330 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
-    "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
+      "1 dl havregryn",
+      "1 ägg",
+      "1/2 banan",
       "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Topping: fryst hallondamm"
+      "1 tsk smör"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#b5179e",
+    "color": "#e76f51",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Mixa havre, ägg och banan.",
+      "Stek små pannkakor i smör.",
+      "Ringla jordnötssmör ovanpå."
     ]
   },
   {
-    "name": "frostig proteinshake – citrus-swirlad",
-    "energy": "334 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Yoghurtparfait med granola & honung",
+    "energy": "390 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Ringla: citrusyoghurt"
+      "1,5 dl grekisk yoghurt",
+      "0,5 dl granola",
+      "1 msk honung",
+      "1 msk chiafrön",
+      "0,5 dl hallon"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#7209b7",
+    "color": "#5a3a2e",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Varva yoghurt och granola i glas.",
+      "Toppa med honung, chiafrön och hallon."
     ]
   },
   {
-    "name": "frostig proteinshake – kokos-crunch",
-    "energy": "338 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Muggkaka choklad-protein",
+    "energy": "530 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Crunch: rostade kokoschips"
+      "1 ägg",
+      "2 msk havremjöl",
+      "1 msk kakao",
+      "1 msk honung",
+      "1 msk jordnötssmör"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#3a0ca3",
+    "color": "#ffb703",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Blanda allt i mugg.",
+      "Mikra 60–90 sek tills fast.",
+      "Låt svalna lätt och ät."
     ]
   },
   {
-    "name": "frostig proteinshake – matcha-damm",
-    "energy": "342 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Äpple fylld med nötkräm & granola",
+    "energy": "450 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Dust: matchagranulat"
+      "1 stort äpple",
+      "2 msk mandelsmör",
+      "1 msk granola",
+      "1 tsk honung"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#4361ee",
+    "color": "#2a9d8f",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Gröp ur kärnhuset.",
+      "Fyll med mandelsmör.",
+      "Toppa med granola och honung."
     ]
   },
   {
-    "name": "frostig proteinshake – kakaolime-boost",
-    "energy": "346 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Energibar med dadlar & kakao",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Boost: kakaonibs + limezest"
+      "3 färska dadlar",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 msk kokosolja",
+      "1 msk pumpafrön"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#4895ef",
+    "color": "#3a86ff",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Mixa allt till deg.",
+      "Pressa ut i form.",
+      "Kyl 15 min och skär i barer."
     ]
   },
   {
-    "name": "frostig proteinshake – blåbärschia-swirl",
-    "energy": "350 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Kesobowl med mango & kokos",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Swirl: blåbärschia-kompott"
+      "1,5 dl keso",
+      "0,5 dl mango",
+      "1 msk kokosflingor",
+      "1 msk mandlar",
+      "1 tsk honung"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#80ffdb",
+    "color": "#e76f51",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Lägg keso i skål.",
+      "Toppa med mango, kokos, mandlar och honung."
     ]
   },
   {
-    "name": "frostig proteinshake – solroskola-topp",
-    "energy": "354 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Chokladboll med espresso & valnötter",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 tsk espressopulver",
+      "1 msk honung",
       "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Topp: karamelliserade solrosfrön"
+      "1 msk hackade valnötter",
+      "1 msk kokos"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#64dfdf",
+    "color": "#5a3a2e",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Blanda havregryn, kakao och espressopulver.",
+      "Rör ner honung och jordnötssmör.",
+      "Arbeta in valnötter.",
+      "Forma till bollar och rulla i kokos."
     ]
   },
   {
-    "name": "frostig proteinshake – pistageknaster",
-    "energy": "358 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Banan-quesadilla med mandelsmör",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Extra crunch: krossade pistagenötter"
+      "1 fullkornstortilla",
+      "1 stor banan",
+      "2 msk mandelsmör",
+      "1 msk mörk choklad",
+      "1 tsk smör till stekning"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#48bfe3",
+    "color": "#ffb703",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Bred mandelsmör på tortillan.",
+      "Lägg på skivad banan och choklad.",
+      "Vik ihop och stek gyllene i smör 2 min per sida.",
+      "Skär i trekanter."
     ]
   },
   {
-    "name": "frostig proteinshake – passionshonung",
-    "energy": "362 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Avokadotoast med ägg & frön",
+    "energy": "470 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
-      "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Ringla: passionsfruktshonung"
+      "1 grov brödskiva",
+      "1/2 avokado",
+      "1 stekt ägg",
+      "1 msk pumpafrön",
+      "Flingsalt"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#5390d9",
+    "color": "#2a9d8f",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Rosta brödet.",
+      "Mosa avokado och bred på.",
+      "Toppa med stekt ägg och frön.",
+      "Salta lätt."
     ]
   },
   {
-    "name": "frostig proteinshake – kanel-flingsalt",
-    "energy": "366 kcal",
-    "boost": "Snabbt flytande mellanmål med protein",
+    "name": "Proteinrik blåbärssmoothie deluxe",
+    "energy": "440 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
     "ingredients": [
-      "2 dl mjölk/växtdryck",
-      "0.5 fryst banan",
+      "1 dl grekisk yoghurt 10%",
+      "1 dl blåbär",
+      "1/2 banan",
       "1 msk jordnötssmör",
-      "1 msk kakaopulver",
-      "is efter smak",
-      "Dust: kanel + flingsalt"
+      "1 msk havregryn"
     ],
-    "time": "4 min",
+    "time": "5–15 min",
     "moods": [
-      "sött"
+      "mättande",
+      "energirikt"
     ],
     "kind": "quick",
-    "color": "#5e60ce",
+    "color": "#3a86ff",
     "instructions": [
-      "Lägg alla ingredienser i en mixer.",
-      "Mixa tills shaken är slät och fluffig.",
-      "Tillsätt mer is om du vill ha den tjockare.",
-      "Häll upp i glas och servera direkt."
+      "Mixa samtliga ingredienser slätt.",
+      "Servera direkt i stort glas."
+    ]
+  },
+  {
+    "name": "Havrepannkaka med jordnötssås",
+    "energy": "540 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 dl havregryn",
+      "1 ägg",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 tsk smör"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#e76f51",
+    "instructions": [
+      "Mixa havre, ägg och banan.",
+      "Stek små pannkakor i smör.",
+      "Ringla jordnötssmör ovanpå."
+    ]
+  },
+  {
+    "name": "Yoghurtparfait med granola & honung",
+    "energy": "390 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1,5 dl grekisk yoghurt",
+      "0,5 dl granola",
+      "1 msk honung",
+      "1 msk chiafrön",
+      "0,5 dl hallon"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#5a3a2e",
+    "instructions": [
+      "Varva yoghurt och granola i glas.",
+      "Toppa med honung, chiafrön och hallon."
+    ]
+  },
+  {
+    "name": "Muggkaka choklad-protein",
+    "energy": "530 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 ägg",
+      "2 msk havremjöl",
+      "1 msk kakao",
+      "1 msk honung",
+      "1 msk jordnötssmör"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#ffb703",
+    "instructions": [
+      "Blanda allt i mugg.",
+      "Mikra 60–90 sek tills fast.",
+      "Låt svalna lätt och ät."
+    ]
+  },
+  {
+    "name": "Äpple fylld med nötkräm & granola",
+    "energy": "450 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 stort äpple",
+      "2 msk mandelsmör",
+      "1 msk granola",
+      "1 tsk honung"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#2a9d8f",
+    "instructions": [
+      "Gröp ur kärnhuset.",
+      "Fyll med mandelsmör.",
+      "Toppa med granola och honung."
+    ]
+  },
+  {
+    "name": "Energibar med dadlar & kakao",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "3 färska dadlar",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 msk kokosolja",
+      "1 msk pumpafrön"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#3a86ff",
+    "instructions": [
+      "Mixa allt till deg.",
+      "Pressa ut i form.",
+      "Kyl 15 min och skär i barer."
+    ]
+  },
+  {
+    "name": "Kesobowl med mango & kokos",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1,5 dl keso",
+      "0,5 dl mango",
+      "1 msk kokosflingor",
+      "1 msk mandlar",
+      "1 tsk honung"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#e76f51",
+    "instructions": [
+      "Lägg keso i skål.",
+      "Toppa med mango, kokos, mandlar och honung."
+    ]
+  },
+  {
+    "name": "Chokladboll med espresso & valnötter",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 tsk espressopulver",
+      "1 msk honung",
+      "1 msk jordnötssmör",
+      "1 msk hackade valnötter",
+      "1 msk kokos"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#5a3a2e",
+    "instructions": [
+      "Blanda havregryn, kakao och espressopulver.",
+      "Rör ner honung och jordnötssmör.",
+      "Arbeta in valnötter.",
+      "Forma till bollar och rulla i kokos."
+    ]
+  },
+  {
+    "name": "Banan-quesadilla med mandelsmör",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 fullkornstortilla",
+      "1 stor banan",
+      "2 msk mandelsmör",
+      "1 msk mörk choklad",
+      "1 tsk smör till stekning"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#ffb703",
+    "instructions": [
+      "Bred mandelsmör på tortillan.",
+      "Lägg på skivad banan och choklad.",
+      "Vik ihop och stek gyllene i smör 2 min per sida.",
+      "Skär i trekanter."
+    ]
+  },
+  {
+    "name": "Avokadotoast med ägg & frön",
+    "energy": "470 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 grov brödskiva",
+      "1/2 avokado",
+      "1 stekt ägg",
+      "1 msk pumpafrön",
+      "Flingsalt"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#2a9d8f",
+    "instructions": [
+      "Rosta brödet.",
+      "Mosa avokado och bred på.",
+      "Toppa med stekt ägg och frön.",
+      "Salta lätt."
+    ]
+  },
+  {
+    "name": "Proteinrik blåbärssmoothie deluxe",
+    "energy": "440 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 dl grekisk yoghurt 10%",
+      "1 dl blåbär",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 msk havregryn"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#3a86ff",
+    "instructions": [
+      "Mixa samtliga ingredienser slätt.",
+      "Servera direkt i stort glas."
+    ]
+  },
+  {
+    "name": "Havrepannkaka med jordnötssås",
+    "energy": "540 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 dl havregryn",
+      "1 ägg",
+      "1/2 banan",
+      "1 msk jordnötssmör",
+      "1 tsk smör"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#e76f51",
+    "instructions": [
+      "Mixa havre, ägg och banan.",
+      "Stek små pannkakor i smör.",
+      "Ringla jordnötssmör ovanpå."
+    ]
+  },
+  {
+    "name": "Yoghurtparfait med granola & honung",
+    "energy": "390 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1,5 dl grekisk yoghurt",
+      "0,5 dl granola",
+      "1 msk honung",
+      "1 msk chiafrön",
+      "0,5 dl hallon"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#5a3a2e",
+    "instructions": [
+      "Varva yoghurt och granola i glas.",
+      "Toppa med honung, chiafrön och hallon."
+    ]
+  },
+  {
+    "name": "Muggkaka choklad-protein",
+    "energy": "530 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 ägg",
+      "2 msk havremjöl",
+      "1 msk kakao",
+      "1 msk honung",
+      "1 msk jordnötssmör"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#ffb703",
+    "instructions": [
+      "Blanda allt i mugg.",
+      "Mikra 60–90 sek tills fast.",
+      "Låt svalna lätt och ät."
+    ]
+  },
+  {
+    "name": "Äpple fylld med nötkräm & granola",
+    "energy": "450 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1 stort äpple",
+      "2 msk mandelsmör",
+      "1 msk granola",
+      "1 tsk honung"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#2a9d8f",
+    "instructions": [
+      "Gröp ur kärnhuset.",
+      "Fyll med mandelsmör.",
+      "Toppa med granola och honung."
+    ]
+  },
+  {
+    "name": "Energibar med dadlar & kakao",
+    "energy": "490 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "3 färska dadlar",
+      "1 dl havregryn",
+      "1 msk kakao",
+      "1 msk kokosolja",
+      "1 msk pumpafrön"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#3a86ff",
+    "instructions": [
+      "Mixa allt till deg.",
+      "Pressa ut i form.",
+      "Kyl 15 min och skär i barer."
+    ]
+  },
+  {
+    "name": "Kesobowl med mango & kokos",
+    "energy": "420 kcal",
+    "boost": "Protein + nyttiga fetter + långsamma kolhydrater för stabil energi och fokus",
+    "ingredients": [
+      "1,5 dl keso",
+      "0,5 dl mango",
+      "1 msk kokosflingor",
+      "1 msk mandlar",
+      "1 tsk honung"
+    ],
+    "time": "5–15 min",
+    "moods": [
+      "mättande",
+      "energirikt"
+    ],
+    "kind": "quick",
+    "color": "#e76f51",
+    "instructions": [
+      "Lägg keso i skål.",
+      "Toppa med mango, kokos, mandlar och honung."
     ]
   }
 ]
