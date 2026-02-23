@@ -1,9 +1,6 @@
 const grid = document.getElementById('snack-grid');
 const template = document.getElementById('snack-card-template');
-const timeFilter = document.getElementById('time-filter');
-const moodFilter = document.getElementById('mood-filter');
 const randomBtn = document.getElementById('random-btn');
-const prepBtn = document.getElementById('prep-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
 
@@ -46,6 +43,18 @@ let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
 
+function uniqueByName(list) {
+  const seen = new Set();
+  return list.filter(snack => {
+    if (seen.has(snack.name)) {
+      return false;
+    }
+    seen.add(snack.name);
+    return true;
+  });
+}
+
+
 async function loadSnacks() {
   const res = await fetch('/api/snacks');
   snacks = await res.json();
@@ -53,7 +62,6 @@ async function loadSnacks() {
   hasShownInitial = false;
   showingFavorites = false;
   if (favoritesToggle) {
-    favoritesToggle.classList.remove('is-active');
     favoritesToggle.textContent = 'Visa favoriter';
   }
   grid.innerHTML = INTRO_MESSAGE;
@@ -117,17 +125,10 @@ function render(list) {
 }
 
 function getFilteredList() {
-  const timeValue = timeFilter.value;
-  const moodValue = moodFilter.value;
-  let filtered = snacks.filter(snack => {
-    const timeOk = timeValue === 'all' ||
-      (timeValue === 'quick' && snack.kind === 'quick') ||
-      (timeValue === 'batch' && snack.kind === 'batch');
-    const moodOk = moodValue === 'all' || snack.moods.includes(moodValue);
-    return timeOk && moodOk;
-  });
+  let filtered = [...snacks];
   if (showingFavorites) {
     filtered = filtered.filter(snack => favorites.has(snack.name));
+    filtered = uniqueByName(filtered);
   }
   return filtered;
 }
@@ -142,6 +143,14 @@ function applyFilters() {
 
 randomBtn.addEventListener('click', () => {
   if (!snacks.length) return;
+
+  if (showingFavorites) {
+    showingFavorites = false;
+    if (favoritesToggle) {
+      favoritesToggle.textContent = 'Visa favoriter';
+    }
+  }
+
   const filteredPool = hasShownInitial ? getFilteredList() : snacks;
   const source = filteredPool.length ? filteredPool : snacks;
   if (!source.length) {
@@ -154,33 +163,26 @@ randomBtn.addEventListener('click', () => {
   render([choice]);
 });
 
-timeFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
-});
-
-moodFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
-});
-
 if (favoritesToggle) {
   favoritesToggle.addEventListener('click', () => {
-    if (!snacks.length || !hasShownInitial) return;
-    showingFavorites = !showingFavorites;
-    favoritesToggle.classList.toggle('is-active', showingFavorites);
-    favoritesToggle.textContent = showingFavorites ? 'Visa alla' : 'Visa favoriter';
-    applyFilters();
+    if (!snacks.length) return;
+
+    if (showingFavorites) {
+      showingFavorites = false;
+      hasShownInitial = false;
+      current = [];
+      favoritesToggle.textContent = 'Visa favoriter';
+      grid.innerHTML = INTRO_MESSAGE;
+      return;
+    }
+
+    showingFavorites = true;
+    hasShownInitial = true;
+    favoritesToggle.textContent = 'Tillbaka';
+    current = getFilteredList();
+    render(current);
   });
   favoritesToggle.textContent = 'Visa favoriter';
-}
-
-if (prepBtn) {
-  prepBtn.addEventListener('click', () => {
-    if (!snacks.length || !hasShownInitial) return;
-    timeFilter.value = 'batch';
-    applyFilters();
-  });
 }
 
 loadSnacks();
