@@ -4,6 +4,10 @@ const randomBtn = document.getElementById('random-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
 
+const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
+const cookieBanner = document.getElementById('cookie-banner');
+const cookieAcceptBtn = document.getElementById('cookie-accept');
+
 const FAVORITES_KEY = 'snackFavorites';
 let favorites = new Set();
 
@@ -42,6 +46,40 @@ let snacks = [];
 let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
+
+
+function hasCookieConsent() {
+  try {
+    return localStorage.getItem(COOKIE_CONSENT_KEY) === 'true';
+  } catch (_error) {
+    return false;
+  }
+}
+
+function setCookieConsent() {
+  try {
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'true');
+  } catch (error) {
+    console.warn('Kunde inte spara cookie-val', error);
+  }
+}
+
+function setupCookieBanner() {
+  if (!cookieBanner || !cookieAcceptBtn) {
+    return;
+  }
+
+  if (hasCookieConsent()) {
+    cookieBanner.classList.add('is-hidden');
+    return;
+  }
+
+  cookieBanner.classList.remove('is-hidden');
+  cookieAcceptBtn.addEventListener('click', () => {
+    setCookieConsent();
+    cookieBanner.classList.add('is-hidden');
+  });
+}
 
 function uniqueByName(list) {
   const seen = new Set();
@@ -185,4 +223,5 @@ if (favoritesToggle) {
   favoritesToggle.textContent = 'Visa favoriter';
 }
 
+setupCookieBanner();
 loadSnacks();
