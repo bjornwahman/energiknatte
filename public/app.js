@@ -3,7 +3,6 @@ const template = document.getElementById('snack-card-template');
 const timeFilter = document.getElementById('time-filter');
 const moodFilter = document.getElementById('mood-filter');
 const randomBtn = document.getElementById('random-btn');
-const prepBtn = document.getElementById('prep-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
 
@@ -173,14 +172,6 @@ if (favoritesToggle) {
     applyFilters();
   });
   favoritesToggle.textContent = 'Visa favoriter';
-}
-
-if (prepBtn) {
-  prepBtn.addEventListener('click', () => {
-    if (!snacks.length || !hasShownInitial) return;
-    timeFilter.value = 'batch';
-    applyFilters();
-  });
 }
 
 loadSnacks();
