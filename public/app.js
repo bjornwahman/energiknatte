@@ -153,6 +153,14 @@ function applyFilters() {
 
 randomBtn.addEventListener('click', () => {
   if (!snacks.length) return;
+
+  if (showingFavorites) {
+    showingFavorites = false;
+    if (favoritesToggle) {
+      favoritesToggle.textContent = 'Visa favoriter';
+    }
+  }
+
   const filteredPool = hasShownInitial ? getFilteredList() : snacks;
   const source = filteredPool.length ? filteredPool : snacks;
   if (!source.length) {
