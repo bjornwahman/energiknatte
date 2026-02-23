@@ -48,9 +48,14 @@ body {
 }
 .cta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
   margin-top: 1.5rem;
+}
+
+.cta-row button {
+  min-width: 240px;
 }
 button {
   border: none;
@@ -73,6 +78,16 @@ button:hover {
   background: transparent;
   color: var(--text);
   border: 2px dashed rgba(255,255,255,0.5);
+}
+
+#favorites-toggle {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+#favorites-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .filters {
   margin: 2.5rem 0 1.5rem;
@@ -141,7 +156,7 @@ select {
 @media (max-width: 780px) {
   body { padding: 1.5rem; }
   .hero { flex-direction: column; text-align: center; }
-  .cta-row { justify-content: center; }
+  .cta-row { align-items: center; }
 }
 .snack-card h3 {
   margin: 1rem 0 0.4rem;
@@ -193,31 +208,128 @@ select {
 }
 
 
-.favorites-toggle {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-  color: #fff;
-  padding: 0.7rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
-}
-
-.favorites-toggle:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.favorites-toggle.is-active {
-  background: linear-gradient(120deg, #ffbe0b, #ff006e);
-  border-color: transparent;
-  color: #0b0f19;
-}
 
 .grid-placeholder {
   text-align: center;
   padding: 2rem;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
+}
+
+.top-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.top-link-btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.14);
+  font-weight: 600;
+}
+
+.top-link-btn:hover {
+  background: rgba(255,255,255,0.26);
+}
+
+.info-page {
+  max-width: 760px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-section {
+  margin-top: 2rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.92);
+  color: #13072e;
+  padding: 0.7rem 0.8rem;
+}
+
+@media (max-width: 780px) {
+  .top-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: 860px;
+  margin: 0 auto;
+  z-index: 20;
+  background: rgba(18, 8, 46, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cookie-banner p {
+  margin: 0;
+  color: #fff;
+}
+
+.cookie-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.7rem;
+}
+
+.cookie-actions a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cookie-actions button {
+  background: linear-gradient(120deg, #ffbe0b, #ff006e);
+  color: #230940;
+}
+
+.cookie-banner.is-hidden {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .cookie-actions {
+    justify-content: space-between;
+  }
 }
