@@ -10,6 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="top-links" aria-label="Snabblänkar">
+    <a class="top-link-btn" href="/integritetspolicy.html">Integritetspolicy</a>
+    <a class="top-link-btn" href="/om-oss.html">Om oss</a>
+    <a class="top-link-btn" href="/nyheter.html">Nyheter</a>
+    <a class="top-link-btn" href="/guider.html">Guider</a>
+    <a class="top-link-btn" href="/lankar.html">Länkar</a>
+  </nav>
+
   <header class="hero">
     <div>
       <p class="pill">Boost mode</p>
@@ -17,32 +25,12 @@
       <p class="subtitle">Snabba mellanmål med hjärnbränsle för barn med ADHD</p>
       <div class="cta-row">
         <button id="random-btn">Ge mig ett mellanmål!</button>
-        <button id="prep-btn" class="ghost">Visa batch-favoriter</button>
+        <button id="favorites-toggle" type="button">Visa favoriter</button>
       </div>
     </div>
     <img src="/mascot.svg" alt="Raketsnacks" />
   </header>
 
-  <section class="filters">
-    <label>
-      <span>Tillagningstid</span>
-      <select id="time-filter">
-        <option value="all">Alla</option>
-        <option value="quick">Under 5 min</option>
-        <option value="batch">Förbereds/batch</option>
-      </select>
-    </label>
-    <label>
-      <span>Smakprofil</span>
-      <select id="mood-filter">
-        <option value="all">Alla</option>
-        <option value="sött">Söt & krämig</option>
-        <option value="salt">Salt & matigt</option>
-        <option value="crunch">Crunchy/knaprigt</option>
-      </select>
-    </label>
-    <button id="favorites-toggle" class="favorites-toggle" type="button">Visa favoriter</button>
-  </section>
 
   <section id="snack-grid" class="snack-grid" aria-live="polite"></section>
 
