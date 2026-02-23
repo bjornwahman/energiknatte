@@ -45,6 +45,18 @@ let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
 
+function uniqueByName(list) {
+  const seen = new Set();
+  return list.filter(snack => {
+    if (seen.has(snack.name)) {
+      return false;
+    }
+    seen.add(snack.name);
+    return true;
+  });
+}
+
+
 async function loadSnacks() {
   const res = await fetch('/api/snacks');
   snacks = await res.json();
@@ -126,6 +138,7 @@ function getFilteredList() {
   });
   if (showingFavorites) {
     filtered = filtered.filter(snack => favorites.has(snack.name));
+    filtered = uniqueByName(filtered);
   }
   return filtered;
 }
