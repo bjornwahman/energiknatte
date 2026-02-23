@@ -1,7 +1,5 @@
 const grid = document.getElementById('snack-grid');
 const template = document.getElementById('snack-card-template');
-const timeFilter = document.getElementById('time-filter');
-const moodFilter = document.getElementById('mood-filter');
 const randomBtn = document.getElementById('random-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
@@ -127,15 +125,7 @@ function render(list) {
 }
 
 function getFilteredList() {
-  const timeValue = timeFilter.value;
-  const moodValue = moodFilter.value;
-  let filtered = snacks.filter(snack => {
-    const timeOk = timeValue === 'all' ||
-      (timeValue === 'quick' && snack.kind === 'quick') ||
-      (timeValue === 'batch' && snack.kind === 'batch');
-    const moodOk = moodValue === 'all' || snack.moods.includes(moodValue);
-    return timeOk && moodOk;
-  });
+  let filtered = [...snacks];
   if (showingFavorites) {
     filtered = filtered.filter(snack => favorites.has(snack.name));
     filtered = uniqueByName(filtered);
@@ -171,16 +161,6 @@ randomBtn.addEventListener('click', () => {
   hasShownInitial = true;
   current = [choice];
   render([choice]);
-});
-
-timeFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
-});
-
-moodFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
 });
 
 if (favoritesToggle) {
