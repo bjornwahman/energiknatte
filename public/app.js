@@ -1,11 +1,13 @@
 const grid = document.getElementById('snack-grid');
 const template = document.getElementById('snack-card-template');
-const timeFilter = document.getElementById('time-filter');
-const moodFilter = document.getElementById('mood-filter');
 const randomBtn = document.getElementById('random-btn');
-const prepBtn = document.getElementById('prep-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
+const searchInput = document.getElementById('search-input');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
+
+const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
+const cookieBanner = document.getElementById('cookie-banner');
+const cookieAcceptBtn = document.getElementById('cookie-accept');
 
 const FAVORITES_KEY = 'snackFavorites';
 let favorites = new Set();
@@ -45,6 +47,53 @@ let snacks = [];
 let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
+let searchQuery = '';
+
+
+function hasCookieConsent() {
+  try {
+    return localStorage.getItem(COOKIE_CONSENT_KEY) === 'true';
+  } catch (_error) {
+    return false;
+  }
+}
+
+function setCookieConsent() {
+  try {
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'true');
+  } catch (error) {
+    console.warn('Kunde inte spara cookie-val', error);
+  }
+}
+
+function setupCookieBanner() {
+  if (!cookieBanner || !cookieAcceptBtn) {
+    return;
+  }
+
+  if (hasCookieConsent()) {
+    cookieBanner.classList.add('is-hidden');
+    return;
+  }
+
+  cookieBanner.classList.remove('is-hidden');
+  cookieAcceptBtn.addEventListener('click', () => {
+    setCookieConsent();
+    cookieBanner.classList.add('is-hidden');
+  });
+}
+
+function uniqueByName(list) {
+  const seen = new Set();
+  return list.filter(snack => {
+    if (seen.has(snack.name)) {
+      return false;
+    }
+    seen.add(snack.name);
+    return true;
+  });
+}
+
 
 async function loadSnacks() {
   const res = await fetch('/api/snacks');
@@ -53,9 +102,21 @@ async function loadSnacks() {
   hasShownInitial = false;
   showingFavorites = false;
   if (favoritesToggle) {
-    favoritesToggle.classList.remove('is-active');
     favoritesToggle.textContent = 'Visa favoriter';
   }
+  if (searchInput) {
+    searchQuery = searchInput.value.trim().toLowerCase();
+  } else {
+    searchQuery = '';
+  }
+
+  if (searchQuery) {
+    hasShownInitial = true;
+    current = getFilteredList();
+    render(current);
+    return;
+  }
+
   grid.innerHTML = INTRO_MESSAGE;
 }
 
@@ -116,18 +177,29 @@ function render(list) {
   });
 }
 
+function matchesSearch(snack, query) {
+  if (!query) {
+    return true;
+  }
+
+  const haystack = [
+    snack.name,
+    snack.energy,
+    snack.boost,
+    ...(snack.ingredients || []),
+    ...(snack.instructions || [])
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  return haystack.includes(query);
+}
+
 function getFilteredList() {
-  const timeValue = timeFilter.value;
-  const moodValue = moodFilter.value;
-  let filtered = snacks.filter(snack => {
-    const timeOk = timeValue === 'all' ||
-      (timeValue === 'quick' && snack.kind === 'quick') ||
-      (timeValue === 'batch' && snack.kind === 'batch');
-    const moodOk = moodValue === 'all' || snack.moods.includes(moodValue);
-    return timeOk && moodOk;
-  });
+  let filtered = snacks.filter(snack => matchesSearch(snack, searchQuery));
   if (showingFavorites) {
     filtered = filtered.filter(snack => favorites.has(snack.name));
+    filtered = uniqueByName(filtered);
   }
   return filtered;
 }
@@ -140,8 +212,37 @@ function applyFilters() {
   render(current);
 }
 
+if (searchInput) {
+  searchInput.addEventListener('input', event => {
+    searchQuery = event.target.value.trim().toLowerCase();
+
+    if (!searchQuery && !showingFavorites) {
+      hasShownInitial = false;
+      current = [];
+      grid.innerHTML = INTRO_MESSAGE;
+      return;
+    }
+
+    hasShownInitial = true;
+    if (!snacks.length) {
+      return;
+    }
+
+    current = getFilteredList();
+    render(current);
+  });
+}
+
 randomBtn.addEventListener('click', () => {
   if (!snacks.length) return;
+
+  if (showingFavorites) {
+    showingFavorites = false;
+    if (favoritesToggle) {
+      favoritesToggle.textContent = 'Visa favoriter';
+    }
+  }
+
   const filteredPool = hasShownInitial ? getFilteredList() : snacks;
   const source = filteredPool.length ? filteredPool : snacks;
   if (!source.length) {
@@ -154,33 +255,34 @@ randomBtn.addEventListener('click', () => {
   render([choice]);
 });
 
-timeFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
-});
-
-moodFilter.addEventListener('change', () => {
-  if (!snacks.length || !hasShownInitial) return;
-  applyFilters();
-});
-
 if (favoritesToggle) {
   favoritesToggle.addEventListener('click', () => {
-    if (!snacks.length || !hasShownInitial) return;
-    showingFavorites = !showingFavorites;
-    favoritesToggle.classList.toggle('is-active', showingFavorites);
-    favoritesToggle.textContent = showingFavorites ? 'Visa alla' : 'Visa favoriter';
-    applyFilters();
+    if (!snacks.length) return;
+
+    if (showingFavorites) {
+      showingFavorites = false;
+      favoritesToggle.textContent = 'Visa favoriter';
+
+      if (searchQuery) {
+        hasShownInitial = true;
+        current = getFilteredList();
+        render(current);
+      } else {
+        hasShownInitial = false;
+        current = [];
+        grid.innerHTML = INTRO_MESSAGE;
+      }
+      return;
+    }
+
+    showingFavorites = true;
+    hasShownInitial = true;
+    favoritesToggle.textContent = 'Tillbaka';
+    current = getFilteredList();
+    render(current);
   });
   favoritesToggle.textContent = 'Visa favoriter';
 }
 
-if (prepBtn) {
-  prepBtn.addEventListener('click', () => {
-    if (!snacks.length || !hasShownInitial) return;
-    timeFilter.value = 'batch';
-    applyFilters();
-  });
-}
-
+setupCookieBanner();
 loadSnacks();
