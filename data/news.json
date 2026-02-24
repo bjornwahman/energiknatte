@@ -1,0 +1,20 @@
+[
+  {
+    "id": "seed-1",
+    "title": "Nya informationssidor live",
+    "content": "Vi har publicerat nya informationssidor för Integritetspolicy och Om oss.",
+    "createdAt": "2026-01-12T10:00:00.000Z"
+  },
+  {
+    "id": "seed-2",
+    "title": "Favoriter förbättrade",
+    "content": "Favoritfunktionen har förbättrats och navigeringen är tydligare.",
+    "createdAt": "2026-01-05T14:30:00.000Z"
+  },
+  {
+    "id": "seed-3",
+    "title": "Fler guider på gång",
+    "content": "Vi fortsätter arbetet med guider och kontaktfunktion.",
+    "createdAt": "2025-12-20T09:15:00.000Z"
+  }
+]
