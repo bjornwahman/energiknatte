@@ -63,7 +63,12 @@
         <label>Mood(s)<input name="moods" placeholder="sött,crunch" required /></label>
         <label>Ingredienser (en per rad)<textarea name="ingredients" required></textarea></label>
         <label>Instruktioner (en per rad)<textarea name="instructions" required></textarea></label>
-        <button type="submit">Spara recept</button>
+        <input type="hidden" name="originalName" />
+        <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <button id="save-new-btn" type="submit">Spara som nytt</button>
+          <button id="save-edit-btn" type="button" style="display:none;">Spara ändringar</button>
+          <button id="cancel-edit-btn" type="button" style="display:none; background:rgba(255,255,255,0.2); color:#fff;">Avbryt redigering</button>
+        </div>
         <p id="form-status"></p>
       </form>
       <div class="admin-card"><h2>Befintliga recept</h2><div id="recipes" class="list"></div></div>
@@ -153,7 +158,7 @@
       return date.toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' });
     }
 
-    function renderEntityList(container, items, { getTitle, getMeta, getBody, buttonAttr }) {
+    function renderEntityList(container, items, { getTitle, getMeta, getBody, actions }) {
       container.innerHTML = '';
       if (!items.length) {
         container.innerHTML = '<p>Inga poster ännu.</p>';
@@ -180,24 +185,116 @@
           details.appendChild(p);
         }
 
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = 'Ta bort';
-        button.setAttribute(buttonAttr, item.id || item.name);
+        const buttonWrap = document.createElement('div');
+        buttonWrap.style.display = 'flex';
+        buttonWrap.style.gap = '0.4rem';
 
-        row.append(details, button);
+        actions.forEach(action => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = action.label;
+          if (action.variant === 'edit') {
+            button.style.background = 'rgba(127,231,220,0.2)';
+            button.style.color = '#7fe7dc';
+          }
+          button.setAttribute(action.attr, action.value(item));
+          buttonWrap.appendChild(button);
+        });
+
+        row.append(details, buttonWrap);
         fragment.appendChild(row);
       });
       container.appendChild(fragment);
     }
 
-    async function loadSnacks() {
+    function setRecipeFormMode(mode, snack = null) {
+      const saveEditBtn = document.getElementById('save-edit-btn');
+      const cancelEditBtn = document.getElementById('cancel-edit-btn');
+      const saveNewBtn = document.getElementById('save-new-btn');
+      const originalNameInput = form.elements.originalName;
+
+      if (mode === 'edit' && snack) {
+        form.elements.name.value = snack.name || '';
+        form.elements.energy.value = snack.energy || '';
+        form.elements.boost.value = snack.boost || '';
+        form.elements.time.value = snack.time || '';
+        form.elements.kind.value = snack.kind || '';
+        form.elements.color.value = snack.color || '#ffbe0b';
+        form.elements.moods.value = (snack.moods || []).join(',');
+        form.elements.ingredients.value = (snack.ingredients || []).join('
+');
+        form.elements.instructions.value = (snack.instructions || []).join('
+');
+        originalNameInput.value = snack.name || '';
+        saveEditBtn.style.display = 'inline-block';
+        cancelEditBtn.style.display = 'inline-block';
+        saveNewBtn.textContent = 'Spara som nytt';
+        statusEl.textContent = `Redigerar: ${snack.name}`;
+      } else {
+        form.reset();
+        form.elements.color.value = '#ffbe0b';
+        originalNameInput.value = '';
+        saveEditBtn.style.display = 'none';
+        cancelEditBtn.style.display = 'none';
+        saveNewBtn.textContent = 'Spara som nytt';
+      }
+    }
+
+    function buildSnackPayload(sourceForm) {
+      return {
+        name: sourceForm.get('name').trim(),
+        energy: sourceForm.get('energy').trim(),
+        boost: sourceForm.get('boost').trim(),
+        time: sourceForm.get('time').trim(),
+        kind: sourceForm.get('kind').trim(),
+        color: sourceForm.get('color').trim(),
+        moods: sourceForm.get('moods').split(',').map(v => v.trim()).filter(Boolean),
+        ingredients: splitLines(sourceForm.get('ingredients')),
+        instructions: splitLines(sourceForm.get('instructions'))
+      };
+    }
+
+    async function saveRecipeAsNew() {
+      statusEl.textContent = 'Sparar nytt recept...';
+      const payload = buildSnackPayload(new FormData(form));
+      const res = await fetch('/api/snacks', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (!res.ok) {
+        statusEl.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte spara receptet';
+        return;
+      }
+      setRecipeFormMode('new');
+      statusEl.textContent = 'Receptet sparades som nytt!';
+      await loadSnacks();
+    }
+
+    async function saveRecipeEdit() {
+      const originalName = form.elements.originalName.value;
+      if (!originalName) {
+        statusEl.textContent = 'Välj ett recept att redigera först.';
+        return;
+      }
+      statusEl.textContent = 'Sparar ändringar...';
+      const payload = buildSnackPayload(new FormData(form));
+      const res = await fetch(`/api/snacks/${encodeURIComponent(originalName)}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (!res.ok) {
+        statusEl.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte spara ändringar';
+        return;
+      }
+      setRecipeFormMode('new');
+      statusEl.textContent = 'Ändringarna sparades!';
+      await loadSnacks();
+    }
+
+async function loadSnacks() {
       const snacks = await (await fetch('/api/snacks')).json();
       renderEntityList(recipesEl, snacks, {
         getTitle: item => item.name,
         getMeta: item => `${item.time} · ${item.energy}`,
-        getBody: () => '',
-        buttonAttr: 'data-snack-name'
+        getBody: item => item.boost,
+        actions: [
+          { label: 'Redigera', attr: 'data-snack-edit', value: item => item.name, variant: 'edit' },
+          { label: 'Ta bort', attr: 'data-snack-name', value: item => item.name }
+        ]
       });
     }
 
@@ -207,7 +304,7 @@
         getTitle: item => item.title,
         getMeta: item => formatDate(item.createdAt),
         getBody: item => item.content,
-        buttonAttr: 'data-news-id'
+        actions: [{ label: 'Ta bort', attr: 'data-news-id', value: item => item.id }]
       });
     }
 
@@ -217,7 +314,7 @@
         getTitle: item => item.title,
         getMeta: item => formatDate(item.createdAt),
         getBody: item => item.content,
-        buttonAttr: 'data-guide-id'
+        actions: [{ label: 'Ta bort', attr: 'data-guide-id', value: item => item.id }]
       });
     }
 
@@ -227,33 +324,100 @@
         getTitle: item => item.title,
         getMeta: item => item.url,
         getBody: item => item.description,
-        buttonAttr: 'data-link-id'
+        actions: [{ label: 'Ta bort', attr: 'data-link-id', value: item => item.id }]
       });
     }
 
     form.addEventListener('submit', async event => {
       event.preventDefault();
-      statusEl.textContent = 'Sparar...';
-      const formData = new FormData(form);
-      const payload = {
-        name: formData.get('name').trim(),
-        energy: formData.get('energy').trim(),
-        boost: formData.get('boost').trim(),
-        time: formData.get('time').trim(),
-        kind: formData.get('kind').trim(),
-        color: formData.get('color').trim(),
-        moods: formData.get('moods').split(',').map(v => v.trim()).filter(Boolean),
-        ingredients: splitLines(formData.get('ingredients')),
-        instructions: splitLines(formData.get('instructions'))
-      };
-      const res = await fetch('/api/snacks', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      await saveRecipeAsNew();
+    });
+
+
+    document.getElementById('save-edit-btn').addEventListener('click', async () => {
+      await saveRecipeEdit();
+    });
+
+    document.getElementById('cancel-edit-btn').addEventListener('click', () => {
+      setRecipeFormMode('new');
+      statusEl.textContent = 'Redigering avbruten.';
+    });
+
+    newsForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      newsStatus.textContent = 'Publicerar...';
+      const formData = new FormData(newsForm);
+      const res = await fetch('/api/news', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), content: String(formData.get('content')||'').trim() }) });
       if (!res.ok) {
-        statusEl.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte spara receptet';
+        newsStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera nyhet';
         return;
       }
-      form.reset();
-      statusEl.textContent = 'Receptet sparades!';
-      await loadSnacks();
+      newsForm.reset();
+      newsStatus.textContent = 'Nyheten är publicerad!';
+      await loadNews();
+    });
+
+    guidesForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      guidesStatus.textContent = 'Publicerar...';
+      const formData = new FormData(guidesForm);
+      const res = await fetch('/api/guides', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), content: String(formData.get('content')||'').trim() }) });
+      if (!res.ok) {
+        guidesStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera guide';
+        return;
+      }
+      guidesForm.reset();
+      guidesStatus.textContent = 'Guiden är publicerad!';
+      await loadGuides();
+    });
+
+    linksForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      linksStatus.textContent = 'Publicerar...';
+      const formData = new FormData(linksForm);
+      const res = await fetch('/api/links', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), url: String(formData.get('url')||'').trim(), description: String(formData.get('description')||'').trim() }) });
+      if (!res.ok) {
+        linksStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera länk';
+        return;
+      }
+      linksForm.reset();
+      linksStatus.textContent = 'Länken är publicerad!';
+      await loadLinks();
+    });
+
+    document.body.addEventListener('click', async event => {
+      const editSnack = event.target.closest('button[data-snack-edit]');
+      if (editSnack) {
+        const snacks = await (await fetch('/api/snacks')).json();
+        const selected = snacks.find(item => item.name === editSnack.dataset.snackEdit);
+        if (selected) {
+          setRecipeFormMode('edit', selected);
+        }
+      }
+
+      const snack = event.target.closest('button[data-snack-name]');
+      if (snack && confirm('Ta bort detta recept?')) {
+        await fetch(`/api/snacks/${encodeURIComponent(snack.dataset.snackName)}`, { method: 'DELETE' });
+        await loadSnacks();
+      }
+
+      const news = event.target.closest('button[data-news-id]');
+      if (news && confirm('Ta bort den här nyheten?')) {
+        await fetch(`/api/news/${encodeURIComponent(news.dataset.newsId)}`, { method: 'DELETE' });
+        await loadNews();
+      }
+
+      const guide = event.target.closest('button[data-guide-id]');
+      if (guide && confirm('Ta bort den här guiden?')) {
+        await fetch(`/api/guides/${encodeURIComponent(guide.dataset.guideId)}`, { method: 'DELETE' });
+        await loadGuides();
+      }
+
+      const link = event.target.closest('button[data-link-id]');
+      if (link && confirm('Ta bort den här länken?')) {
+        await fetch(`/api/links/${encodeURIComponent(link.dataset.linkId)}`, { method: 'DELETE' });
+        await loadLinks();
+      }
     });
 
     newsForm.addEventListener('submit', async event => {
@@ -349,6 +513,7 @@
       restartStatus.textContent = isBack ? 'Webappen är igång igen ✅' : 'Servern är fortfarande nere. Försök igen.';
     });
 
+    setRecipeFormMode('new');
     loadSnacks();
     loadNews();
     loadGuides();

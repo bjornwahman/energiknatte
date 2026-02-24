@@ -106,6 +106,55 @@ app.post('/api/snacks', (req, res) => {
   return res.status(201).json(normalized);
 });
 
+
+app.put('/api/snacks/:name', (req, res) => {
+  const originalName = String(req.params.name || '').trim();
+  if (!originalName) {
+    return res.status(400).json({ error: 'Originalnamn saknas' });
+  }
+
+  const payload = req.body || {};
+  const requiredFields = ['name', 'energy', 'boost', 'ingredients', 'instructions', 'time', 'kind', 'color', 'moods'];
+  const missing = requiredFields.filter(field => {
+    const value = payload[field];
+    if (Array.isArray(value)) {
+      return !value.length;
+    }
+    return value === undefined || value === '';
+  });
+
+  if (missing.length) {
+    return res.status(400).json({ error: `Saknar fält: ${missing.join(', ')}` });
+  }
+
+  const snacks = readSnacks();
+  const index = snacks.findIndex(snack => snack.name.toLowerCase() === originalName.toLowerCase());
+  if (index === -1) {
+    return res.status(404).json({ error: 'Hittade inget recept att uppdatera' });
+  }
+
+  const nameCollision = snacks.some((snack, i) => i !== index && snack.name.toLowerCase() === String(payload.name).toLowerCase());
+  if (nameCollision) {
+    return res.status(409).json({ error: 'Ett annat recept med det namnet finns redan' });
+  }
+
+  const updated = {
+    name: payload.name,
+    energy: payload.energy,
+    boost: payload.boost,
+    ingredients: payload.ingredients,
+    instructions: payload.instructions,
+    time: payload.time,
+    moods: payload.moods,
+    kind: payload.kind,
+    color: payload.color || '#ffbe0b'
+  };
+
+  snacks[index] = updated;
+  writeSnacks(snacks);
+  return res.json(updated);
+});
+
 app.delete('/api/snacks/:name', (req, res) => {
   const target = String(req.params.name || '').trim().toLowerCase();
   if (!target) {
