@@ -4,7 +4,59 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 4100;
-const DATA_PATH = path.join(__dirname, 'data', 'snacks.json');
+
+const SEED_SNACKS_PATH = path.join(__dirname, 'data', 'snacks.json');
+const SEED_NEWS_PATH = path.join(__dirname, 'data', 'news.json');
+const SEED_GUIDES_PATH = path.join(__dirname, 'data', 'guides.json');
+const SEED_LINKS_PATH = path.join(__dirname, 'data', 'links.json');
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'runtime-data');
+const SNACKS_PATH = path.join(DATA_DIR, 'snacks.json');
+const NEWS_PATH = path.join(DATA_DIR, 'news.json');
+const GUIDES_PATH = path.join(DATA_DIR, 'guides.json');
+const LINKS_PATH = path.join(DATA_DIR, 'links.json');
+
+const ensureDataFile = ({ targetPath, seedPath, fallback = [] }) => {
+  if (fs.existsSync(targetPath)) {
+    return;
+  }
+
+  if (seedPath && fs.existsSync(seedPath)) {
+    fs.copyFileSync(seedPath, targetPath);
+    return;
+  }
+
+  fs.writeFileSync(targetPath, JSON.stringify(fallback, null, 2));
+};
+
+const readArrayFile = (filePath, fallback = []) => {
+  const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return Array.isArray(parsed) ? parsed : fallback;
+};
+
+const writeArrayFile = (filePath, value) => {
+  fs.writeFileSync(filePath, JSON.stringify(value, null, 2));
+};
+
+const makeId = () => `${Date.now()}-${Math.random().toString(16).slice(2, 8)}`;
+
+const initializeStorage = () => {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+  ensureDataFile({ targetPath: SNACKS_PATH, seedPath: SEED_SNACKS_PATH, fallback: [] });
+  ensureDataFile({ targetPath: NEWS_PATH, seedPath: SEED_NEWS_PATH, fallback: [] });
+  ensureDataFile({ targetPath: GUIDES_PATH, seedPath: SEED_GUIDES_PATH, fallback: [] });
+  ensureDataFile({ targetPath: LINKS_PATH, seedPath: SEED_LINKS_PATH, fallback: [] });
+};
+
+initializeStorage();
+
+const readSnacks = () => readArrayFile(SNACKS_PATH, []);
+const writeSnacks = snacks => writeArrayFile(SNACKS_PATH, snacks);
+const readNews = () => readArrayFile(NEWS_PATH, []);
+const writeNews = news => writeArrayFile(NEWS_PATH, news);
+const readGuides = () => readArrayFile(GUIDES_PATH, []);
+const writeGuides = guides => writeArrayFile(GUIDES_PATH, guides);
+const readLinks = () => readArrayFile(LINKS_PATH, []);
+const writeLinks = links => writeArrayFile(LINKS_PATH, links);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -12,9 +64,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/admin', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
-
-const readSnacks = () => JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
-const writeSnacks = snacks => fs.writeFileSync(DATA_PATH, JSON.stringify(snacks, null, 2));
 
 app.get('/api/snacks', (_req, res) => {
   res.json(readSnacks());
@@ -54,7 +103,7 @@ app.post('/api/snacks', (req, res) => {
 
   snacks.push(normalized);
   writeSnacks(snacks);
-  res.status(201).json(normalized);
+  return res.status(201).json(normalized);
 });
 
 app.delete('/api/snacks/:name', (req, res) => {
@@ -71,7 +120,122 @@ app.delete('/api/snacks/:name', (req, res) => {
   }
 
   writeSnacks(filtered);
-  res.json({ ok: true });
+  return res.json({ ok: true });
+});
+
+app.get('/api/news', (_req, res) => {
+  res.json(readNews());
+});
+
+app.post('/api/news', (req, res) => {
+  const payload = req.body || {};
+  const title = String(payload.title || '').trim();
+  const content = String(payload.content || '').trim();
+
+  if (!title || !content) {
+    return res.status(400).json({ error: 'Titel och innehåll krävs' });
+  }
+
+  const news = readNews();
+  const item = { id: makeId(), title, content, createdAt: new Date().toISOString() };
+  news.unshift(item);
+  writeNews(news);
+  return res.status(201).json(item);
+});
+
+app.delete('/api/news/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const news = readNews();
+  const filtered = news.filter(item => item.id !== id);
+
+  if (filtered.length === news.length) {
+    return res.status(404).json({ error: 'Nyheten hittades inte' });
+  }
+
+  writeNews(filtered);
+  return res.json({ ok: true });
+});
+
+app.get('/api/guides', (_req, res) => {
+  res.json(readGuides());
+});
+
+app.post('/api/guides', (req, res) => {
+  const payload = req.body || {};
+  const title = String(payload.title || '').trim();
+  const content = String(payload.content || '').trim();
+
+  if (!title || !content) {
+    return res.status(400).json({ error: 'Titel och innehåll krävs' });
+  }
+
+  const guides = readGuides();
+  const item = { id: makeId(), title, content, createdAt: new Date().toISOString() };
+  guides.unshift(item);
+  writeGuides(guides);
+  return res.status(201).json(item);
+});
+
+app.delete('/api/guides/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const guides = readGuides();
+  const filtered = guides.filter(item => item.id !== id);
+  if (filtered.length === guides.length) {
+    return res.status(404).json({ error: 'Guiden hittades inte' });
+  }
+
+  writeGuides(filtered);
+  return res.json({ ok: true });
+});
+
+app.get('/api/links', (_req, res) => {
+  res.json(readLinks());
+});
+
+app.post('/api/links', (req, res) => {
+  const payload = req.body || {};
+  const title = String(payload.title || '').trim();
+  const url = String(payload.url || '').trim();
+  const description = String(payload.description || '').trim();
+
+  if (!title || !url) {
+    return res.status(400).json({ error: 'Titel och URL krävs' });
+  }
+
+  let normalizedUrl = url;
+  if (!/^https?:\/\//i.test(normalizedUrl)) {
+    normalizedUrl = `https://${normalizedUrl}`;
+  }
+
+  const links = readLinks();
+  const item = { id: makeId(), title, url: normalizedUrl, description, createdAt: new Date().toISOString() };
+  links.unshift(item);
+  writeLinks(links);
+  return res.status(201).json(item);
+});
+
+app.delete('/api/links/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const links = readLinks();
+  const filtered = links.filter(item => item.id !== id);
+  if (filtered.length === links.length) {
+    return res.status(404).json({ error: 'Länken hittades inte' });
+  }
+
+  writeLinks(filtered);
+  return res.json({ ok: true });
 });
 
 app.post('/api/admin/restart', (_req, res) => {
@@ -89,4 +253,5 @@ app.get('/health', (_req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Snack-appen snurrar på http://localhost:${PORT}`);
+  console.log(`Data lagras i: ${DATA_DIR}`);
 });

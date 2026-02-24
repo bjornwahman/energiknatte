@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nyheter – Energiknatte</title>
   <link rel="stylesheet" href="/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5657975552241199" crossorigin="anonymous"></script>
 </head>
 <body>
   <main class="info-page">
@@ -14,12 +15,77 @@
 
     <section>
       <h2>Senaste uppdateringar</h2>
-      <ul>
-        <li>Nya informationssidor för Integritetspolicy och Om oss.</li>
-        <li>Förbättrad favoritfunktion och tydligare navigering.</li>
-        <li>Fortsatt arbete med guider och kontaktfunktion.</li>
-      </ul>
+      <div id="news-list"></div>
     </section>
   </main>
+
+  <script>
+    const newsList = document.getElementById('news-list');
+
+    function formatDate(value) {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) {
+        return '';
+      }
+      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function renderNews(items) {
+      newsList.innerHTML = '';
+
+      if (!items.length) {
+        newsList.innerHTML = '<p>Inga nyheter publicerade ännu.</p>';
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      items.forEach(item => {
+        const article = document.createElement('article');
+        article.className = 'news-item';
+
+        const title = document.createElement('h3');
+        title.textContent = item.title || 'Nyhet';
+        article.appendChild(title);
+
+        const dateText = formatDate(item.createdAt);
+        if (dateText) {
+          const date = document.createElement('p');
+          date.className = 'news-date';
+          date.textContent = dateText;
+          article.appendChild(date);
+        }
+
+        const content = document.createElement('p');
+        const lines = String(item.content || '').split('\n');
+        lines.forEach((line, index) => {
+          if (index > 0) {
+            content.appendChild(document.createElement('br'));
+          }
+          content.appendChild(document.createTextNode(line));
+        });
+        article.appendChild(content);
+
+        fragment.appendChild(article);
+      });
+
+      newsList.appendChild(fragment);
+    }
+
+    async function loadNews() {
+      try {
+        const res = await fetch('/api/news');
+        if (!res.ok) {
+          throw new Error('Kunde inte hämta nyheter');
+        }
+        const items = await res.json();
+        renderNews(items);
+      } catch (error) {
+        newsList.innerHTML = '<p>Kunde inte ladda nyheter just nu.</p>';
+      }
+    }
+
+    loadNews();
+  </script>
 </body>
 </html>
