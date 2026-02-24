@@ -154,6 +154,50 @@ app.delete('/api/news/:id', (req, res) => {
   return res.json({ ok: true });
 });
 
+
+app.get('/api/news', (_req, res) => {
+  res.json(readNews());
+});
+
+app.post('/api/news', (req, res) => {
+  const payload = req.body || {};
+  const title = String(payload.title || '').trim();
+  const content = String(payload.content || '').trim();
+
+  if (!title || !content) {
+    return res.status(400).json({ error: 'Titel och innehåll krävs' });
+  }
+
+  const news = readNews();
+  const item = {
+    id: `${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+    title,
+    content,
+    createdAt: new Date().toISOString()
+  };
+
+  news.unshift(item);
+  writeNews(news);
+  res.status(201).json(item);
+});
+
+app.delete('/api/news/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const news = readNews();
+  const filtered = news.filter(item => item.id !== id);
+
+  if (filtered.length === news.length) {
+    return res.status(404).json({ error: 'Nyheten hittades inte' });
+  }
+
+  writeNews(filtered);
+  res.json({ ok: true });
+});
+
 app.post('/api/admin/restart', (_req, res) => {
   res.json({ ok: true, message: 'Startar om appen...' });
 
