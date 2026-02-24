@@ -8,6 +8,9 @@ const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanm
 const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
 const cookieBanner = document.getElementById('cookie-banner');
 const cookieAcceptBtn = document.getElementById('cookie-accept');
+const topLinks = document.querySelector('.top-links');
+const topLinksToggle = document.querySelector('.top-links-toggle');
+
 
 const FAVORITES_KEY = 'snackFavorites';
 let favorites = new Set();
@@ -49,6 +52,32 @@ let showingFavorites = false;
 let hasShownInitial = false;
 let searchQuery = '';
 
+
+
+function setupTopLinksMenu() {
+  if (!topLinks || !topLinksToggle) {
+    return;
+  }
+
+  topLinksToggle.addEventListener('click', () => {
+    const isOpen = topLinks.classList.toggle('is-open');
+    topLinksToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  topLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      topLinks.classList.remove('is-open');
+      topLinksToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', event => {
+    if (!topLinks.contains(event.target)) {
+      topLinks.classList.remove('is-open');
+      topLinksToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 function hasCookieConsent() {
   try {
@@ -262,5 +291,6 @@ if (favoritesToggle) {
   favoritesToggle.textContent = 'Visa favoriter';
 }
 
+setupTopLinksMenu();
 setupCookieBanner();
 loadSnacks();
