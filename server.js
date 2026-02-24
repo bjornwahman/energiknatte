@@ -5,6 +5,7 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 4100;
 const DATA_PATH = path.join(__dirname, 'data', 'snacks.json');
+const NEWS_PATH = path.join(__dirname, 'data', 'news.json');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -15,6 +16,20 @@ app.get('/admin', (_req, res) => {
 
 const readSnacks = () => JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 const writeSnacks = snacks => fs.writeFileSync(DATA_PATH, JSON.stringify(snacks, null, 2));
+
+const readNews = () => {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(NEWS_PATH, 'utf8'));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
+  }
+};
+
+const writeNews = news => fs.writeFileSync(NEWS_PATH, JSON.stringify(news, null, 2));
 
 app.get('/api/snacks', (_req, res) => {
   res.json(readSnacks());
@@ -71,6 +86,50 @@ app.delete('/api/snacks/:name', (req, res) => {
   }
 
   writeSnacks(filtered);
+  res.json({ ok: true });
+});
+
+
+app.get('/api/news', (_req, res) => {
+  res.json(readNews());
+});
+
+app.post('/api/news', (req, res) => {
+  const payload = req.body || {};
+  const title = String(payload.title || '').trim();
+  const content = String(payload.content || '').trim();
+
+  if (!title || !content) {
+    return res.status(400).json({ error: 'Titel och innehåll krävs' });
+  }
+
+  const news = readNews();
+  const item = {
+    id: `${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+    title,
+    content,
+    createdAt: new Date().toISOString()
+  };
+
+  news.unshift(item);
+  writeNews(news);
+  res.status(201).json(item);
+});
+
+app.delete('/api/news/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const news = readNews();
+  const filtered = news.filter(item => item.id !== id);
+
+  if (filtered.length === news.length) {
+    return res.status(404).json({ error: 'Nyheten hittades inte' });
+  }
+
+  writeNews(filtered);
   res.json({ ok: true });
 });
 
