@@ -361,3 +361,26 @@ select {
     justify-content: space-between;
   }
 }
+
+
+#news-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.news-item {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.news-item h3 {
+  margin: 0;
+}
+
+.news-date {
+  margin: 0.35rem 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin – Recept</title>
+  <title>Admin – Recept & Nyheter</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
     body {
@@ -108,7 +108,7 @@
 </head>
 <body>
   <main class="admin-panel">
-    <h1>Admin · Recept</h1>
+    <h1>Admin · Recept & Nyheter</h1>
     <section class="admin-grid">
       <form id="create-form" class="admin-card">
         <h2>Lägg till recept</h2>
@@ -128,6 +128,18 @@
         <h2>Befintliga recept</h2>
         <div id="recipes"></div>
       </div>
+
+      <form id="news-form" class="admin-card">
+        <h2>Publicera nyhet</h2>
+        <label>Titel<input name="title" required /></label>
+        <label>Innehåll<textarea name="content" required></textarea></label>
+        <button type="submit">Publicera nyhet</button>
+        <p id="news-status"></p>
+      </form>
+      <div class="admin-card">
+        <h2>Publicerade nyheter</h2>
+        <div id="news-list"></div>
+      </div>
       <div class="admin-card">
         <h2>Webapp</h2>
         <p>Starta om servern om du behöver ladda om appen efter ändringar.</p>
@@ -143,7 +155,11 @@
     const statusEl = document.getElementById('form-status');
     const restartButton = document.getElementById('restart-app');
     const restartStatus = document.getElementById('restart-status');
+    const newsForm = document.getElementById('news-form');
+    const newsStatus = document.getElementById('news-status');
+    const newsList = document.getElementById('news-list');
     let snacks = [];
+    let news = [];
 
     const splitLines = value => value.split('\n').map(line => line.trim()).filter(Boolean);
 
@@ -151,6 +167,57 @@
       const res = await fetch('/api/snacks');
       snacks = await res.json();
       renderList();
+    }
+
+
+    function formatDate(value) {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) {
+        return '';
+      }
+      return date.toLocaleString('sv-SE', { dateStyle: 'medium', timeStyle: 'short' });
+    }
+
+    async function loadNews() {
+      const res = await fetch('/api/news');
+      news = await res.json();
+      renderNews();
+    }
+
+    function renderNews() {
+      newsList.innerHTML = '';
+
+      if (!news.length) {
+        newsList.innerHTML = '<p>Inga nyheter ännu.</p>';
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      news.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'recipe-row';
+
+        const details = document.createElement('div');
+        const title = document.createElement('strong');
+        title.textContent = item.title;
+        const meta = document.createElement('small');
+        meta.textContent = formatDate(item.createdAt);
+        const text = document.createElement('p');
+        text.textContent = item.content;
+        text.style.margin = '0.5rem 0 0';
+        details.append(title, document.createElement('br'), meta, text);
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.dataset.newsId = item.id;
+        button.textContent = 'Ta bort';
+
+        row.append(details, button);
+        fragment.appendChild(row);
+      });
+
+      newsList.appendChild(fragment);
     }
 
     function renderList() {
@@ -200,6 +267,25 @@
       await loadSnacks();
     });
 
+
+    newsList.addEventListener('click', async (event) => {
+      const button = event.target.closest('button[data-news-id]');
+      if (!button) return;
+      if (!confirm('Ta bort den här nyheten?')) return;
+
+      const res = await fetch(`/api/news/${encodeURIComponent(button.dataset.newsId)}`, {
+        method: 'DELETE'
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        alert(data.error || 'Kunde inte ta bort nyheten');
+        return;
+      }
+
+      await loadNews();
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       statusEl.textContent = 'Sparar...';
@@ -231,6 +317,33 @@
       form.reset();
       statusEl.textContent = 'Receptet sparades!';
       await loadSnacks();
+    });
+
+
+    newsForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      newsStatus.textContent = 'Publicerar...';
+      const formData = new FormData(newsForm);
+      const payload = {
+        title: String(formData.get('title') || '').trim(),
+        content: String(formData.get('content') || '').trim()
+      };
+
+      const res = await fetch('/api/news', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        newsStatus.textContent = data.error || 'Kunde inte publicera nyheten';
+        return;
+      }
+
+      newsForm.reset();
+      newsStatus.textContent = 'Nyheten är publicerad!';
+      await loadNews();
     });
 
     async function waitForServerToRestart({ retries = 20, intervalMs = 1500 } = {}) {
@@ -274,6 +387,7 @@
     });
 
     loadSnacks();
+    loadNews();
   </script>
 </body>
 </html>
