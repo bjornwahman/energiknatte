@@ -1,3 +1,7 @@
+html {
+  background: #13072e;
+}
+
 :root {
   --bg: #13072e;
   --bg-2: #220a47;
@@ -12,6 +16,7 @@ body {
   color: var(--text);
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 2rem clamp(1rem, 5vw, 4rem) 4rem;
 }
 .hero {
@@ -247,8 +252,23 @@ select {
 .top-links {
   display: flex;
   justify-content: flex-end;
-  gap: 0.8rem;
   margin-bottom: 1rem;
+}
+
+.top-links-toggle {
+  display: none;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-weight: 600;
+}
+
+.top-links-list {
+  display: flex;
+  gap: 0.8rem;
 }
 
 .top-link-btn {
@@ -323,8 +343,38 @@ select {
 
 @media (max-width: 780px) {
   .top-links {
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .top-links-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+
+  .top-links-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.45rem);
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 220px;
+    padding: 0.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(19, 7, 46, 0.96);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+  }
+
+  .top-links.is-open .top-links-list {
+    display: flex;
+  }
+
+  .top-link-btn {
+    text-align: center;
   }
 }
 
