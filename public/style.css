@@ -281,6 +281,20 @@ select {
   font-weight: 600;
 }
 
+.info-page a:not(.back-link) {
+  color: #ffd166;
+  font-weight: 600;
+}
+
+.info-page a:not(.back-link):hover {
+  color: #fff0b3;
+}
+
+.info-page a[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
 .contact-section {
   margin-top: 2rem;
 }
