@@ -97,7 +97,8 @@ function uniqueByName(list) {
 
 async function loadSnacks() {
   const res = await fetch('/api/snacks');
-  snacks = await res.json();
+  const loadedSnacks = await res.json();
+  snacks = uniqueByName(loadedSnacks);
   current = [];
   hasShownInitial = false;
   showingFavorites = false;
