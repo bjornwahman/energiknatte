@@ -2,6 +2,7 @@ const grid = document.getElementById('snack-grid');
 const template = document.getElementById('snack-card-template');
 const randomBtn = document.getElementById('random-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
+const recipeSearch = document.getElementById('recipe-search');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
 
 const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
@@ -46,6 +47,7 @@ let snacks = [];
 let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
+let searchQuery = '';
 
 
 function hasCookieConsent() {
@@ -162,12 +164,35 @@ function render(list) {
   });
 }
 
+function matchesSearch(snack, query) {
+  if (!query) {
+    return true;
+  }
+
+  const haystack = [
+    snack.name,
+    snack.energy,
+    snack.boost,
+    ...(snack.ingredients || []),
+    ...(snack.instructions || []),
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  return haystack.includes(query);
+}
+
 function getFilteredList() {
   let filtered = [...snacks];
   if (showingFavorites) {
     filtered = filtered.filter(snack => favorites.has(snack.name));
     filtered = uniqueByName(filtered);
   }
+
+  if (searchQuery) {
+    filtered = filtered.filter(snack => matchesSearch(snack, searchQuery));
+  }
+
   return filtered;
 }
 
@@ -200,6 +225,19 @@ randomBtn.addEventListener('click', () => {
   current = [choice];
   render([choice]);
 });
+
+if (recipeSearch) {
+  recipeSearch.addEventListener('input', event => {
+    searchQuery = event.target.value.trim().toLowerCase();
+    if (!snacks.length) {
+      return;
+    }
+
+    hasShownInitial = true;
+    current = getFilteredList();
+    render(current);
+  });
+}
 
 if (favoritesToggle) {
   favoritesToggle.addEventListener('click', () => {
