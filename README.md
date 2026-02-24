@@ -24,10 +24,10 @@ Redigera `data/snacks.json` (namn, energi, ingredients, moods, kind). Starta om 
 
 
 ## Skydda data (recept/nyheter) vid push/pull
-Appen skriver nu **inte** till versionshanterade filer i `data/` under drift.
+Appen skriver nu **inte** till versionshanterade filer i `data/` under drift (gäller recept, nyheter, guider och länkar).
 Istället används en lokal datamapp `runtime-data/` (eller valfri mapp via `DATA_DIR`).
 
-- Vid första start kopieras seed-data från `data/snacks.json` och `data/news.json` till `runtime-data/`.
+- Vid första start kopieras seed-data från `data/snacks.json`, `data/news.json`, `data/guides.json` och `data/links.json` till `runtime-data/`.
 - Alla ändringar från admin (nya recept/nyheter) sparas i `runtime-data/` och följer inte med i Git-push.
 - `runtime-data/` är gitignorerad.
 

@@ -13,11 +13,50 @@
     <h1>Länkar</h1>
     <p>Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.</p>
 
-    <ul>
-      <li><a href="#" aria-disabled="true">Kommande: Tips för veckoplanering</a></li>
-      <li><a href="#" aria-disabled="true">Kommande: Stödresurser för ADHD</a></li>
-      <li><a href="#" aria-disabled="true">Kommande: Näringsguider för mellanmål</a></li>
-    </ul>
+    <div id="links-list"></div>
   </main>
+
+  <script>
+    const linksList = document.getElementById('links-list');
+
+    function render(items) {
+      linksList.innerHTML = '';
+      if (!items.length) {
+        linksList.innerHTML = '<p>Inga länkar publicerade ännu.</p>';
+        return;
+      }
+
+      const ul = document.createElement('ul');
+      items.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.url || '#';
+        a.textContent = item.title || item.url || 'Länk';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        li.appendChild(a);
+        if (item.description) {
+          const desc = document.createElement('p');
+          desc.className = 'news-date';
+          desc.textContent = item.description;
+          li.appendChild(desc);
+        }
+        ul.appendChild(li);
+      });
+      linksList.appendChild(ul);
+    }
+
+    async function loadLinks() {
+      try {
+        const res = await fetch('/api/links');
+        if (!res.ok) throw new Error('Kunde inte hämta länkar');
+        render(await res.json());
+      } catch (_error) {
+        linksList.innerHTML = '<p>Kunde inte ladda länkar just nu.</p>';
+      }
+    }
+
+    loadLinks();
+  </script>
 </body>
 </html>

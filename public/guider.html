@@ -11,16 +11,61 @@
   <main class="info-page">
     <a class="back-link" href="/">← Tillbaka till startsidan</a>
     <h1>Guider</h1>
-    <p>Praktiska guider för att få ut mer av Energiknatte i vardagen.</p>
+    <p>Praktiska guider som hjälper dig använda Energiknatte i vardagen.</p>
 
     <section>
-      <h2>Kom igång</h2>
-      <ol>
-        <li>Klicka på <strong>Ge mig ett mellanmål!</strong> för ett snabbt förslag.</li>
-        <li>Markera favoriter med hjärtat på receptkortet.</li>
-        <li>Använd <strong>Visa favoriter</strong> för att se dina sparade favoriter.</li>
-      </ol>
+      <h2>Aktuella guider</h2>
+      <div id="guides-list"></div>
     </section>
   </main>
+
+  <script>
+    const guidesList = document.getElementById('guides-list');
+    const formatDate = value => {
+      const d = new Date(value);
+      return Number.isNaN(d.getTime()) ? '' : d.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+    };
+
+    function render(items) {
+      guidesList.innerHTML = '';
+      if (!items.length) {
+        guidesList.innerHTML = '<p>Inga guider publicerade ännu.</p>';
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      items.forEach(item => {
+        const article = document.createElement('article');
+        article.className = 'news-item';
+        const h3 = document.createElement('h3');
+        h3.textContent = item.title || 'Guide';
+        article.appendChild(h3);
+        const dateText = formatDate(item.createdAt);
+        if (dateText) {
+          const date = document.createElement('p');
+          date.className = 'news-date';
+          date.textContent = dateText;
+          article.appendChild(date);
+        }
+        const p = document.createElement('p');
+        p.textContent = item.content || '';
+        article.appendChild(p);
+        fragment.appendChild(article);
+      });
+      guidesList.appendChild(fragment);
+    }
+
+    async function loadGuides() {
+      try {
+        const res = await fetch('/api/guides');
+        if (!res.ok) throw new Error('Kunde inte hämta guider');
+        render(await res.json());
+      } catch (_error) {
+        guidesList.innerHTML = '<p>Kunde inte ladda guider just nu.</p>';
+      }
+    }
+
+    loadGuides();
+  </script>
 </body>
 </html>
