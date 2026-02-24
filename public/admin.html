@@ -420,6 +420,74 @@ async function loadSnacks() {
       }
     });
 
+    newsForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      newsStatus.textContent = 'Publicerar...';
+      const formData = new FormData(newsForm);
+      const res = await fetch('/api/news', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), content: String(formData.get('content')||'').trim() }) });
+      if (!res.ok) {
+        newsStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera nyhet';
+        return;
+      }
+      newsForm.reset();
+      newsStatus.textContent = 'Nyheten är publicerad!';
+      await loadNews();
+    });
+
+    guidesForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      guidesStatus.textContent = 'Publicerar...';
+      const formData = new FormData(guidesForm);
+      const res = await fetch('/api/guides', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), content: String(formData.get('content')||'').trim() }) });
+      if (!res.ok) {
+        guidesStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera guide';
+        return;
+      }
+      guidesForm.reset();
+      guidesStatus.textContent = 'Guiden är publicerad!';
+      await loadGuides();
+    });
+
+    linksForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      linksStatus.textContent = 'Publicerar...';
+      const formData = new FormData(linksForm);
+      const res = await fetch('/api/links', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: String(formData.get('title')||'').trim(), url: String(formData.get('url')||'').trim(), description: String(formData.get('description')||'').trim() }) });
+      if (!res.ok) {
+        linksStatus.textContent = (await res.json().catch(() => ({}))).error || 'Kunde inte publicera länk';
+        return;
+      }
+      linksForm.reset();
+      linksStatus.textContent = 'Länken är publicerad!';
+      await loadLinks();
+    });
+
+    document.body.addEventListener('click', async event => {
+      const snack = event.target.closest('button[data-snack-name]');
+      if (snack && confirm('Ta bort detta recept?')) {
+        await fetch(`/api/snacks/${encodeURIComponent(snack.dataset.snackName)}`, { method: 'DELETE' });
+        await loadSnacks();
+      }
+
+      const news = event.target.closest('button[data-news-id]');
+      if (news && confirm('Ta bort den här nyheten?')) {
+        await fetch(`/api/news/${encodeURIComponent(news.dataset.newsId)}`, { method: 'DELETE' });
+        await loadNews();
+      }
+
+      const guide = event.target.closest('button[data-guide-id]');
+      if (guide && confirm('Ta bort den här guiden?')) {
+        await fetch(`/api/guides/${encodeURIComponent(guide.dataset.guideId)}`, { method: 'DELETE' });
+        await loadGuides();
+      }
+
+      const link = event.target.closest('button[data-link-id]');
+      if (link && confirm('Ta bort den här länken?')) {
+        await fetch(`/api/links/${encodeURIComponent(link.dataset.linkId)}`, { method: 'DELETE' });
+        await loadLinks();
+      }
+    });
+
     async function waitForServerToRestart({ retries = 20, intervalMs = 1500 } = {}) {
       for (let attempt = 1; attempt <= retries; attempt += 1) {
         try {
