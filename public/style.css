@@ -299,9 +299,21 @@ select {
 }
 
 .back-link {
-  color: #fff;
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
   text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.3);
   font-weight: 600;
+  box-shadow: 0 12px 26px rgba(9, 5, 31, 0.32);
+  backdrop-filter: blur(6px);
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.back-link:hover {
+  background: rgba(255,255,255,0.42);
 }
 
 .info-page a:not(.back-link) {
