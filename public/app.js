@@ -3,6 +3,10 @@ const template = document.getElementById('snack-card-template');
 const randomBtn = document.getElementById('random-btn');
 const favoritesToggle = document.getElementById('favorites-toggle');
 const recipeSearch = document.getElementById('recipe-search');
+const snackModal = document.getElementById('snack-modal');
+const snackModalCard = document.getElementById('snack-modal-card');
+const snackModalClose = document.getElementById('snack-modal-close');
+const snackModalRefresh = document.getElementById('snack-modal-refresh');
 const INTRO_MESSAGE = `<p class="grid-placeholder">Tryck på "Ge mig ett mellanmål" för att skapa ditt första recept.</p>`;
 
 const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
@@ -10,7 +14,7 @@ const cookieBanner = document.getElementById('cookie-banner');
 const cookieAcceptBtn = document.getElementById('cookie-accept');
 const topLinks = document.querySelector('.top-links');
 const topLinksToggle = document.querySelector('.top-links-toggle');
-
+const mobileModalMedia = window.matchMedia('(max-width: 780px)');
 
 const FAVORITES_KEY = 'snackFavorites';
 let favorites = new Set();
@@ -51,8 +55,7 @@ let current = [];
 let showingFavorites = false;
 let hasShownInitial = false;
 let searchQuery = '';
-
-
+let modalSource = [];
 
 function setupTopLinksMenu() {
   if (!topLinks || !topLinksToggle) {
@@ -123,6 +126,97 @@ function uniqueByName(list) {
   });
 }
 
+function shouldUseSnackModal() {
+  return Boolean(snackModal && snackModalCard && mobileModalMedia.matches);
+}
+
+function closeSnackModal() {
+  if (!snackModal) {
+    return;
+  }
+  snackModal.setAttribute('hidden', '');
+  document.body.classList.remove('is-modal-open');
+}
+
+function createSnackCard(snack) {
+  const card = template.content.cloneNode(true);
+  const article = card.querySelector('article');
+
+  article.style.setProperty('--accent', snack.color);
+  article.style.background = `linear-gradient(180deg, ${snack.color}, #ffffff)`;
+  article.querySelector('.time').textContent = snack.time;
+  article.querySelector('h2').textContent = snack.name;
+  article.querySelector('.energy').textContent = snack.energy;
+  article.querySelector('.boost').textContent = snack.boost;
+
+  const listEl = article.querySelector('.ingredients');
+  snack.ingredients.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    listEl.appendChild(li);
+  });
+
+  const instructionsList = article.querySelector('.instructions');
+  const instructionsHeading = article.querySelector('h3');
+  if (Array.isArray(snack.instructions) && snack.instructions.length) {
+    snack.instructions.forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      instructionsList.appendChild(li);
+    });
+  } else {
+    instructionsHeading?.remove();
+    instructionsList?.remove();
+  }
+
+  const favoriteBtn = article.querySelector('.favorite-btn');
+  setFavoriteState(favoriteBtn, snack.name);
+  favoriteBtn.addEventListener('click', event => {
+    event.stopPropagation();
+    toggleFavorite(snack.name);
+    setFavoriteState(favoriteBtn, snack.name);
+
+    if (showingFavorites) {
+      const filteredAfter = getFilteredList();
+      current = filteredAfter;
+      render(filteredAfter);
+    }
+  });
+
+  return article;
+}
+
+function openSnackModal(snack, source) {
+  if (!shouldUseSnackModal()) {
+    return;
+  }
+
+  modalSource = source;
+  snackModalCard.innerHTML = '';
+  snackModalCard.appendChild(createSnackCard(snack));
+  snackModal.removeAttribute('hidden');
+  document.body.classList.add('is-modal-open');
+}
+
+function pickRandomSnackFrom(list, excludeName = '') {
+  if (!list.length) {
+    return null;
+  }
+
+  const eligible = list.filter(snack => snack.name !== excludeName);
+  const source = eligible.length ? eligible : list;
+  return source[Math.floor(Math.random() * source.length)] || null;
+}
+
+function presentSnackChoice(snack, source) {
+  hasShownInitial = true;
+  current = [snack];
+  render([snack]);
+
+  if (shouldUseSnackModal()) {
+    openSnackModal(snack, source);
+  }
+}
 
 async function loadSnacks() {
   const res = await fetch('/api/snacks');
@@ -148,49 +242,7 @@ function render(list) {
   }
 
   list.forEach(snack => {
-    const card = template.content.cloneNode(true);
-    const article = card.querySelector('article');
-    article.style.setProperty('--accent', snack.color);
-    article.style.background = `linear-gradient(180deg, ${snack.color}, #ffffff)`;
-    article.querySelector('.time').textContent = snack.time;
-    article.querySelector('h2').textContent = snack.name;
-    article.querySelector('.energy').textContent = snack.energy;
-    article.querySelector('.boost').textContent = snack.boost;
-
-    const listEl = article.querySelector('.ingredients');
-    snack.ingredients.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      listEl.appendChild(li);
-    });
-
-    const instructionsList = article.querySelector('.instructions');
-    const instructionsHeading = article.querySelector('h3');
-    if (Array.isArray(snack.instructions) && snack.instructions.length) {
-      snack.instructions.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step;
-        instructionsList.appendChild(li);
-      });
-    } else {
-      instructionsHeading?.remove();
-      instructionsList?.remove();
-    }
-
-    const favoriteBtn = article.querySelector('.favorite-btn');
-    setFavoriteState(favoriteBtn, snack.name);
-    favoriteBtn.addEventListener('click', event => {
-      event.stopPropagation();
-      toggleFavorite(snack.name);
-      setFavoriteState(favoriteBtn, snack.name);
-      if (showingFavorites) {
-        const filteredAfter = getFilteredList();
-        current = filteredAfter;
-        render(filteredAfter);
-      }
-    });
-
-    grid.appendChild(card);
+    grid.appendChild(createSnackCard(snack));
   });
 }
 
@@ -226,12 +278,37 @@ function getFilteredList() {
   return filtered;
 }
 
-function applyFilters() {
-  if (!snacks.length || !hasShownInitial) {
+function setupSnackModal() {
+  if (!snackModal || !snackModalClose || !snackModalRefresh) {
     return;
   }
-  current = getFilteredList();
-  render(current);
+
+  snackModalClose.addEventListener('click', () => {
+    closeSnackModal();
+  });
+
+  snackModalRefresh.addEventListener('click', () => {
+    const source = modalSource.length ? modalSource : getFilteredList();
+    const nextSnack = pickRandomSnackFrom(source.length ? source : snacks, current[0]?.name);
+
+    if (!nextSnack) {
+      return;
+    }
+
+    presentSnackChoice(nextSnack, source.length ? source : snacks);
+  });
+
+  snackModal.addEventListener('click', event => {
+    if (event.target === snackModal) {
+      closeSnackModal();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeSnackModal();
+    }
+  });
 }
 
 randomBtn.addEventListener('click', () => {
@@ -250,10 +327,13 @@ randomBtn.addEventListener('click', () => {
     grid.innerHTML = '<p class="grid-placeholder">Inga recept matchar filtret just nu.</p>';
     return;
   }
-  const choice = source[Math.floor(Math.random() * source.length)];
-  hasShownInitial = true;
-  current = [choice];
-  render([choice]);
+
+  const choice = pickRandomSnackFrom(source);
+  if (!choice) {
+    return;
+  }
+
+  presentSnackChoice(choice, source);
 });
 
 if (recipeSearch) {
@@ -263,6 +343,7 @@ if (recipeSearch) {
       return;
     }
 
+    closeSnackModal();
     hasShownInitial = true;
     current = getFilteredList();
     render(current);
@@ -272,6 +353,8 @@ if (recipeSearch) {
 if (favoritesToggle) {
   favoritesToggle.addEventListener('click', () => {
     if (!snacks.length) return;
+
+    closeSnackModal();
 
     if (showingFavorites) {
       showingFavorites = false;
@@ -293,4 +376,5 @@ if (favoritesToggle) {
 
 setupTopLinksMenu();
 setupCookieBanner();
+setupSnackModal();
 loadSnacks();
