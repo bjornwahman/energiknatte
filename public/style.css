@@ -219,6 +219,7 @@ body.is-modal-open > *:not(.snack-modal) {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 0.9rem;
+  position: relative;
 }
 
 .snack-modal-card {
@@ -270,15 +271,26 @@ body.is-modal-open > *:not(.snack-modal) {
   .snack-modal {
     align-items: flex-start;
     padding: 1rem 0.85rem;
+    padding-bottom: calc(6.75rem + env(safe-area-inset-bottom));
   }
 
   .snack-modal-sheet {
     margin-top: 0.75rem;
     max-height: calc(100dvh - 1.5rem);
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
   }
 
   .snack-modal-actions {
     grid-template-columns: 1fr;
+    position: fixed;
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: calc(0.85rem + env(safe-area-inset-bottom));
+    z-index: 45;
+  }
+
+  .snack-modal-card {
+    padding-bottom: 0.5rem;
   }
 }
 .snack-card h3 {
