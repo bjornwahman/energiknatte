@@ -353,8 +353,31 @@ body.is-modal-open > *:not(.snack-modal) {
 
 .top-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
   margin-bottom: 1rem;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.lang-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-weight: 600;
+}
+
+.lang-btn[aria-pressed='true'] {
+  background: rgba(255,255,255,0.42);
 }
 
 .top-links-toggle {
@@ -371,6 +394,7 @@ body.is-modal-open > *:not(.snack-modal) {
 .top-links-list {
   display: flex;
   gap: 0.8rem;
+  margin-left: auto;
 }
 
 .top-link-btn {
@@ -460,8 +484,13 @@ body.is-modal-open > *:not(.snack-modal) {
 
 @media (max-width: 780px) {
   .top-links {
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: flex-start;
     position: relative;
+  }
+
+  .language-switch {
+    flex-wrap: wrap;
   }
 
   .top-links-toggle {
