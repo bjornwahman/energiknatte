@@ -9,20 +9,108 @@
 </head>
 <body>
   <main class="info-page">
-    <a class="back-link" href="/">← Tillbaka till startsidan</a>
-    <h1>Integritetspolicy</h1>
-    <p>
+    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
+      <span id="language-label">Språk:</span>
+      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
+      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    </div>
+
+    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
+    <h1 id="page-heading">Integritetspolicy</h1>
+    <p id="p1">
       Vi värnar om din integritet. På Energiknatte använder vi cookies för att förbättra funktionalitet,
       förstå hur sidan används och ge en bättre upplevelse.
     </p>
-    <p>
+    <p id="p2">
       Vi visar också annonser för att kunna driva sidan eftersom vi inte är ett vinstdrivande företag.
       Annonsintäkter hjälper oss att hålla tjänsten gratis och tillgänglig.
     </p>
-    <p>
+    <p id="p3">
       Vi säljer inte personuppgifter vidare. Om du har frågor om vår hantering av data är du välkommen att
-      kontakta oss via sidan <a href="/om-oss.html">Om oss</a>.
+      kontakta oss via sidan <a id="about-link" href="/om-oss.html">Om oss</a>.
     </p>
   </main>
+
+  <script>
+    const LANGUAGE_KEY = 'siteLanguage';
+    const langSvBtn = document.getElementById('lang-sv');
+    const langEnBtn = document.getElementById('lang-en');
+
+    const translations = {
+      sv: {
+        pageTitle: 'Integritetspolicy – Energiknatte',
+        languageLabel: 'Språk:',
+        backLink: '← Tillbaka till startsidan',
+        heading: 'Integritetspolicy',
+        p1: 'Vi värnar om din integritet. På Energiknatte använder vi cookies för att förbättra funktionalitet, förstå hur sidan används och ge en bättre upplevelse.',
+        p2: 'Vi visar också annonser för att kunna driva sidan eftersom vi inte är ett vinstdrivande företag. Annonsintäkter hjälper oss att hålla tjänsten gratis och tillgänglig.',
+        p3Prefix: 'Vi säljer inte personuppgifter vidare. Om du har frågor om vår hantering av data är du välkommen att kontakta oss via sidan ',
+        aboutLink: 'Om oss',
+      },
+      en: {
+        pageTitle: 'Privacy Policy – Energiknatte',
+        languageLabel: 'Language:',
+        backLink: '← Back to homepage',
+        heading: 'Privacy Policy',
+        p1: 'We value your privacy. At Energiknatte, we use cookies to improve functionality, understand how the site is used, and provide a better experience.',
+        p2: 'We also show ads to keep the site running since we are not a for-profit company. Advertising revenue helps us keep the service free and accessible.',
+        p3Prefix: 'We do not sell personal data. If you have questions about how we handle data, you are welcome to contact us via the ',
+        aboutLink: 'About us',
+      },
+    };
+
+    let language = 'sv';
+
+    function t(key) {
+      return translations[language][key] || translations.sv[key] || key;
+    }
+
+    function applyTranslations() {
+      document.documentElement.lang = language;
+      document.title = t('pageTitle');
+      document.getElementById('language-label').textContent = t('languageLabel');
+      document.getElementById('back-link').textContent = t('backLink');
+      document.getElementById('page-heading').textContent = t('heading');
+      document.getElementById('p1').textContent = t('p1');
+      document.getElementById('p2').textContent = t('p2');
+
+      const p3 = document.getElementById('p3');
+      const aboutLink = document.getElementById('about-link');
+      aboutLink.textContent = t('aboutLink');
+      p3.firstChild.textContent = t('p3Prefix');
+
+      langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
+      langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
+
+    function setLanguage(nextLanguage) {
+      if (!translations[nextLanguage]) {
+        return;
+      }
+      language = nextLanguage;
+      try {
+        localStorage.setItem(LANGUAGE_KEY, language);
+      } catch (_error) {
+        // ignore
+      }
+      applyTranslations();
+    }
+
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (storedLanguage && translations[storedLanguage]) {
+        language = storedLanguage;
+      }
+    } catch (_error) {
+      language = 'sv';
+    }
+
+    langSvBtn.addEventListener('click', () => setLanguage('sv'));
+    langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+    applyTranslations();
+  </script>
 </body>
 </html>

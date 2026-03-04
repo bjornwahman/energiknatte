@@ -9,20 +9,73 @@
 </head>
 <body>
   <main class="info-page">
-    <a class="back-link" href="/">← Tillbaka till startsidan</a>
-    <h1>Länkar</h1>
-    <p>Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.</p>
+    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
+      <span id="language-label">Språk:</span>
+      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
+      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    </div>
+
+    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
+    <h1 id="page-heading">Länkar</h1>
+    <p id="page-description">Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.</p>
 
     <div id="links-list"></div>
   </main>
 
   <script>
+    const LANGUAGE_KEY = 'siteLanguage';
     const linksList = document.getElementById('links-list');
+    const langSvBtn = document.getElementById('lang-sv');
+    const langEnBtn = document.getElementById('lang-en');
+
+    const translations = {
+      sv: {
+        pageTitle: 'Länkar – Energiknatte',
+        languageLabel: 'Språk:',
+        backLink: '← Tillbaka till startsidan',
+        heading: 'Länkar',
+        description: 'Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.',
+        empty: 'Inga länkar publicerade ännu.',
+        loadError: 'Kunde inte ladda länkar just nu.',
+        fetchError: 'Kunde inte hämta länkar',
+        fallbackTitle: 'Länk',
+      },
+      en: {
+        pageTitle: 'Links – Energiknatte',
+        languageLabel: 'Language:',
+        backLink: '← Back to homepage',
+        heading: 'Links',
+        description: 'Here we collect helpful resources and links for families.',
+        empty: 'No links have been published yet.',
+        loadError: 'Could not load links right now.',
+        fetchError: 'Could not fetch links',
+        fallbackTitle: 'Link',
+      },
+    };
+
+    let language = 'sv';
+
+    function t(key) {
+      return translations[language][key] || translations.sv[key] || key;
+    }
+
+    function applyTranslations() {
+      document.documentElement.lang = language;
+      document.title = t('pageTitle');
+      document.getElementById('language-label').textContent = t('languageLabel');
+      document.getElementById('back-link').textContent = t('backLink');
+      document.getElementById('page-heading').textContent = t('heading');
+      document.getElementById('page-description').textContent = t('description');
+      langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
+      langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
 
     function render(items) {
       linksList.innerHTML = '';
       if (!items.length) {
-        linksList.innerHTML = '<p>Inga länkar publicerade ännu.</p>';
+        linksList.innerHTML = `<p>${t('empty')}</p>`;
         return;
       }
 
@@ -31,7 +84,7 @@
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = item.url || '#';
-        a.textContent = item.title || item.url || 'Länk';
+        a.textContent = item.title || item.url || t('fallbackTitle');
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         li.appendChild(a);
@@ -46,16 +99,47 @@
       linksList.appendChild(ul);
     }
 
-    async function loadLinks() {
+    function setLanguage(nextLanguage) {
+      if (!translations[nextLanguage]) {
+        return;
+      }
+      language = nextLanguage;
       try {
-        const res = await fetch('/api/links');
-        if (!res.ok) throw new Error('Kunde inte hämta länkar');
-        render(await res.json());
+        localStorage.setItem(LANGUAGE_KEY, language);
       } catch (_error) {
-        linksList.innerHTML = '<p>Kunde inte ladda länkar just nu.</p>';
+        // ignore
+      }
+      applyTranslations();
+      if (Array.isArray(window.linkItems)) {
+        render(window.linkItems);
       }
     }
 
+    async function loadLinks() {
+      try {
+        const res = await fetch('/api/links');
+        if (!res.ok) throw new Error(t('fetchError'));
+        const items = await res.json();
+        window.linkItems = items;
+        render(items);
+      } catch (_error) {
+        linksList.innerHTML = `<p>${t('loadError')}</p>`;
+      }
+    }
+
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (storedLanguage && translations[storedLanguage]) {
+        language = storedLanguage;
+      }
+    } catch (_error) {
+      language = 'sv';
+    }
+
+    langSvBtn.addEventListener('click', () => setLanguage('sv'));
+    langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+    applyTranslations();
     loadLinks();
   </script>
 </body>

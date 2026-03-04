@@ -9,27 +9,86 @@
 </head>
 <body>
   <main class="info-page">
-    <a class="back-link" href="/">← Tillbaka till startsidan</a>
-    <h1>Guider</h1>
-    <p>Praktiska guider som hjälper dig använda Energiknatte i vardagen.</p>
+    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
+      <span id="language-label">Språk:</span>
+      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
+      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    </div>
+
+    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
+    <h1 id="page-heading">Guider</h1>
+    <p id="page-description">Praktiska guider som hjälper dig använda Energiknatte i vardagen.</p>
 
     <section>
-      <h2>Aktuella guider</h2>
+      <h2 id="guides-heading">Aktuella guider</h2>
       <div id="guides-list"></div>
     </section>
   </main>
 
   <script>
+    const LANGUAGE_KEY = 'siteLanguage';
     const guidesList = document.getElementById('guides-list');
+    const langSvBtn = document.getElementById('lang-sv');
+    const langEnBtn = document.getElementById('lang-en');
+
+    const translations = {
+      sv: {
+        pageTitle: 'Guider – Energiknatte',
+        languageLabel: 'Språk:',
+        backLink: '← Tillbaka till startsidan',
+        heading: 'Guider',
+        description: 'Praktiska guider som hjälper dig använda Energiknatte i vardagen.',
+        guidesHeading: 'Aktuella guider',
+        empty: 'Inga guider publicerade ännu.',
+        loadError: 'Kunde inte ladda guider just nu.',
+        fetchError: 'Kunde inte hämta guider',
+        fallbackTitle: 'Guide',
+      },
+      en: {
+        pageTitle: 'Guides – Energiknatte',
+        languageLabel: 'Language:',
+        backLink: '← Back to homepage',
+        heading: 'Guides',
+        description: 'Practical guides to help you use Energiknatte in everyday life.',
+        guidesHeading: 'Current guides',
+        empty: 'No guides have been published yet.',
+        loadError: 'Could not load guides right now.',
+        fetchError: 'Could not fetch guides',
+        fallbackTitle: 'Guide',
+      },
+    };
+
+    let language = 'sv';
+
+    function t(key) {
+      return translations[language][key] || translations.sv[key] || key;
+    }
+
+    function applyTranslations() {
+      document.documentElement.lang = language;
+      document.title = t('pageTitle');
+      document.getElementById('language-label').textContent = t('languageLabel');
+      document.getElementById('back-link').textContent = t('backLink');
+      document.getElementById('page-heading').textContent = t('heading');
+      document.getElementById('page-description').textContent = t('description');
+      document.getElementById('guides-heading').textContent = t('guidesHeading');
+      langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
+      langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
+
     const formatDate = value => {
       const d = new Date(value);
-      return Number.isNaN(d.getTime()) ? '' : d.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      return Number.isNaN(d.getTime())
+        ? ''
+        : d.toLocaleDateString(language === 'en' ? 'en-US' : 'sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
     };
 
     function render(items) {
       guidesList.innerHTML = '';
       if (!items.length) {
-        guidesList.innerHTML = '<p>Inga guider publicerade ännu.</p>';
+        guidesList.innerHTML = `<p>${t('empty')}</p>`;
         return;
       }
 
@@ -38,7 +97,7 @@
         const article = document.createElement('article');
         article.className = 'news-item';
         const h3 = document.createElement('h3');
-        h3.textContent = item.title || 'Guide';
+        h3.textContent = item.title || t('fallbackTitle');
         article.appendChild(h3);
         const dateText = formatDate(item.createdAt);
         if (dateText) {
@@ -55,16 +114,47 @@
       guidesList.appendChild(fragment);
     }
 
-    async function loadGuides() {
+    function setLanguage(nextLanguage) {
+      if (!translations[nextLanguage]) {
+        return;
+      }
+      language = nextLanguage;
       try {
-        const res = await fetch('/api/guides');
-        if (!res.ok) throw new Error('Kunde inte hämta guider');
-        render(await res.json());
+        localStorage.setItem(LANGUAGE_KEY, language);
       } catch (_error) {
-        guidesList.innerHTML = '<p>Kunde inte ladda guider just nu.</p>';
+        // ignore
+      }
+      applyTranslations();
+      if (Array.isArray(window.guideItems)) {
+        render(window.guideItems);
       }
     }
 
+    async function loadGuides() {
+      try {
+        const res = await fetch('/api/guides');
+        if (!res.ok) throw new Error(t('fetchError'));
+        const items = await res.json();
+        window.guideItems = items;
+        render(items);
+      } catch (_error) {
+        guidesList.innerHTML = `<p>${t('loadError')}</p>`;
+      }
+    }
+
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (storedLanguage && translations[storedLanguage]) {
+        language = storedLanguage;
+      }
+    } catch (_error) {
+      language = 'sv';
+    }
+
+    langSvBtn.addEventListener('click', () => setLanguage('sv'));
+    langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+    applyTranslations();
     loadGuides();
   </script>
 </body>
