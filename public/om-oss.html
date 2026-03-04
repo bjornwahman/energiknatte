@@ -9,13 +9,19 @@
 </head>
 <body>
   <main class="info-page">
-    <a class="back-link" href="/">← Tillbaka till startsidan</a>
-    <h1>Om oss</h1>
-    <p>
+    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
+      <span id="language-label">Språk:</span>
+      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
+      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    </div>
+
+    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
+    <h1 id="page-heading">Om oss</h1>
+    <p id="p1">
       Vi bakom Energiknatte är en sjuksköterska och en IT-tekniker som tillsammans vill göra det enklare
       för familjer att hitta snabba, näringsrika mellanmål.
     </p>
-    <p>
+    <p id="p2">
       Vårt mål är att kombinera praktisk vårderfarenhet med teknik för att skapa ett stöd i vardagen
       för barn med ADHD och deras vuxna.
     </p>
@@ -24,20 +30,116 @@
       <h2 id="kontakt-rubrik">Kontaktformulär</h2>
       <form class="contact-form" action="#" method="post">
         <label>
-          Namn
-          <input type="text" name="name" placeholder="Ditt namn" required />
+          <span id="name-label">Namn</span>
+          <input id="name-input" type="text" name="name" placeholder="Ditt namn" required />
         </label>
         <label>
-          E-post
-          <input type="email" name="email" placeholder="din@mail.se" required />
+          <span id="email-label">E-post</span>
+          <input id="email-input" type="email" name="email" placeholder="din@mail.se" required />
         </label>
         <label>
-          Meddelande
-          <textarea name="message" rows="5" placeholder="Skriv ditt meddelande här..." required></textarea>
+          <span id="message-label">Meddelande</span>
+          <textarea id="message-input" name="message" rows="5" placeholder="Skriv ditt meddelande här..." required></textarea>
         </label>
-        <button type="submit">Skicka (kommer snart)</button>
+        <button id="submit-button" type="submit">Skicka (kommer snart)</button>
       </form>
     </section>
   </main>
+
+  <script>
+    const LANGUAGE_KEY = 'siteLanguage';
+    const langSvBtn = document.getElementById('lang-sv');
+    const langEnBtn = document.getElementById('lang-en');
+
+    const translations = {
+      sv: {
+        pageTitle: 'Om oss – Energiknatte',
+        languageLabel: 'Språk:',
+        backLink: '← Tillbaka till startsidan',
+        heading: 'Om oss',
+        p1: 'Vi bakom Energiknatte är en sjuksköterska och en IT-tekniker som tillsammans vill göra det enklare för familjer att hitta snabba, näringsrika mellanmål.',
+        p2: 'Vårt mål är att kombinera praktisk vårderfarenhet med teknik för att skapa ett stöd i vardagen för barn med ADHD och deras vuxna.',
+        contactHeading: 'Kontaktformulär',
+        name: 'Namn',
+        namePlaceholder: 'Ditt namn',
+        email: 'E-post',
+        emailPlaceholder: 'din@mail.se',
+        message: 'Meddelande',
+        messagePlaceholder: 'Skriv ditt meddelande här...',
+        submit: 'Skicka (kommer snart)',
+      },
+      en: {
+        pageTitle: 'About us – Energiknatte',
+        languageLabel: 'Language:',
+        backLink: '← Back to homepage',
+        heading: 'About us',
+        p1: 'Behind Energiknatte, we are a nurse and an IT technician who want to make it easier for families to find quick, nutritious snacks.',
+        p2: 'Our goal is to combine practical healthcare experience with technology to provide everyday support for children with ADHD and their adults.',
+        contactHeading: 'Contact form',
+        name: 'Name',
+        namePlaceholder: 'Your name',
+        email: 'Email',
+        emailPlaceholder: 'you@example.com',
+        message: 'Message',
+        messagePlaceholder: 'Write your message here...',
+        submit: 'Send (coming soon)',
+      },
+    };
+
+    let language = 'sv';
+
+    function t(key) {
+      return translations[language][key] || translations.sv[key] || key;
+    }
+
+    function applyTranslations() {
+      document.documentElement.lang = language;
+      document.title = t('pageTitle');
+      document.getElementById('language-label').textContent = t('languageLabel');
+      document.getElementById('back-link').textContent = t('backLink');
+      document.getElementById('page-heading').textContent = t('heading');
+      document.getElementById('p1').textContent = t('p1');
+      document.getElementById('p2').textContent = t('p2');
+      document.getElementById('kontakt-rubrik').textContent = t('contactHeading');
+      document.getElementById('name-label').textContent = t('name');
+      document.getElementById('name-input').placeholder = t('namePlaceholder');
+      document.getElementById('email-label').textContent = t('email');
+      document.getElementById('email-input').placeholder = t('emailPlaceholder');
+      document.getElementById('message-label').textContent = t('message');
+      document.getElementById('message-input').placeholder = t('messagePlaceholder');
+      document.getElementById('submit-button').textContent = t('submit');
+      langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
+      langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
+
+    function setLanguage(nextLanguage) {
+      if (!translations[nextLanguage]) {
+        return;
+      }
+      language = nextLanguage;
+      try {
+        localStorage.setItem(LANGUAGE_KEY, language);
+      } catch (_error) {
+        // ignore
+      }
+      applyTranslations();
+    }
+
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (storedLanguage && translations[storedLanguage]) {
+        language = storedLanguage;
+      }
+    } catch (_error) {
+      language = 'sv';
+    }
+
+    langSvBtn.addEventListener('click', () => setLanguage('sv'));
+    langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+    applyTranslations();
+  </script>
 </body>
 </html>

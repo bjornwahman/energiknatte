@@ -9,32 +9,92 @@
 </head>
 <body>
   <main class="info-page">
-    <a class="back-link" href="/">← Tillbaka till startsidan</a>
-    <h1>Nyheter</h1>
-    <p>Här samlar vi nyheter om Energiknatte, nya recept och förbättringar i tjänsten.</p>
+    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
+      <span id="language-label">Språk:</span>
+      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
+      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    </div>
+
+    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
+    <h1 id="page-heading">Nyheter</h1>
+    <p id="page-description">Här samlar vi nyheter om Energiknatte, nya recept och förbättringar i tjänsten.</p>
 
     <section>
-      <h2>Senaste uppdateringar</h2>
+      <h2 id="updates-heading">Senaste uppdateringar</h2>
       <div id="news-list"></div>
     </section>
   </main>
 
   <script>
+    const LANGUAGE_KEY = 'siteLanguage';
     const newsList = document.getElementById('news-list');
+    const langSvBtn = document.getElementById('lang-sv');
+    const langEnBtn = document.getElementById('lang-en');
+
+    const translations = {
+      sv: {
+        pageTitle: 'Nyheter – Energiknatte',
+        languageLabel: 'Språk:',
+        backLink: '← Tillbaka till startsidan',
+        heading: 'Nyheter',
+        description: 'Här samlar vi nyheter om Energiknatte, nya recept och förbättringar i tjänsten.',
+        updates: 'Senaste uppdateringar',
+        empty: 'Inga nyheter publicerade ännu.',
+        loadError: 'Kunde inte ladda nyheter just nu.',
+        fetchError: 'Kunde inte hämta nyheter',
+        fallbackTitle: 'Nyhet',
+      },
+      en: {
+        pageTitle: 'News – Energiknatte',
+        languageLabel: 'Language:',
+        backLink: '← Back to homepage',
+        heading: 'News',
+        description: 'Here we share updates about Energiknatte, new recipes, and improvements to the service.',
+        updates: 'Latest updates',
+        empty: 'No news has been published yet.',
+        loadError: 'Could not load news right now.',
+        fetchError: 'Could not fetch news',
+        fallbackTitle: 'News item',
+      },
+    };
+
+    let language = 'sv';
+
+    function t(key) {
+      return translations[language][key] || translations.sv[key] || key;
+    }
+
+    function applyTranslations() {
+      document.documentElement.lang = language;
+      document.title = t('pageTitle');
+      document.getElementById('language-label').textContent = t('languageLabel');
+      document.getElementById('back-link').textContent = t('backLink');
+      document.getElementById('page-heading').textContent = t('heading');
+      document.getElementById('page-description').textContent = t('description');
+      document.getElementById('updates-heading').textContent = t('updates');
+      langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
+      langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
 
     function formatDate(value) {
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) {
         return '';
       }
-      return date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+      return date.toLocaleDateString(language === 'en' ? 'en-US' : 'sv-SE', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
     }
 
     function renderNews(items) {
       newsList.innerHTML = '';
 
       if (!items.length) {
-        newsList.innerHTML = '<p>Inga nyheter publicerade ännu.</p>';
+        newsList.innerHTML = `<p>${t('empty')}</p>`;
         return;
       }
 
@@ -45,7 +105,7 @@
         article.className = 'news-item';
 
         const title = document.createElement('h3');
-        title.textContent = item.title || 'Nyhet';
+        title.textContent = item.title || t('fallbackTitle');
         article.appendChild(title);
 
         const dateText = formatDate(item.createdAt);
@@ -72,19 +132,49 @@
       newsList.appendChild(fragment);
     }
 
+    function setLanguage(nextLanguage) {
+      if (!translations[nextLanguage]) {
+        return;
+      }
+      language = nextLanguage;
+      try {
+        localStorage.setItem(LANGUAGE_KEY, language);
+      } catch (_error) {
+        // ignore
+      }
+      applyTranslations();
+      if (Array.isArray(window.newsItems)) {
+        renderNews(window.newsItems);
+      }
+    }
+
     async function loadNews() {
       try {
         const res = await fetch('/api/news');
         if (!res.ok) {
-          throw new Error('Kunde inte hämta nyheter');
+          throw new Error(t('fetchError'));
         }
         const items = await res.json();
+        window.newsItems = items;
         renderNews(items);
-      } catch (error) {
-        newsList.innerHTML = '<p>Kunde inte ladda nyheter just nu.</p>';
+      } catch (_error) {
+        newsList.innerHTML = `<p>${t('loadError')}</p>`;
       }
     }
 
+    try {
+      const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (storedLanguage && translations[storedLanguage]) {
+        language = storedLanguage;
+      }
+    } catch (_error) {
+      language = 'sv';
+    }
+
+    langSvBtn.addEventListener('click', () => setLanguage('sv'));
+    langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+    applyTranslations();
     loadNews();
   </script>
 </body>
