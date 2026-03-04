@@ -19,6 +19,7 @@ const cookieAcceptBtn = document.getElementById('cookie-accept');
 const topLinks = document.querySelector('.top-links');
 const topLinksToggle = document.querySelector('.top-links-toggle');
 const mobileModalMedia = window.matchMedia('(max-width: 780px)');
+const mobileTopLinksMedia = window.matchMedia('(max-width: 780px)');
 
 const FAVORITES_KEY = 'snackFavorites';
 let favorites = new Set();
@@ -107,6 +108,10 @@ function t(key) {
   return translations[language][key] || translations.sv[key] || key;
 }
 
+function isMobileTopLinksLayout() {
+  return mobileTopLinksMedia.matches;
+}
+
 function getIntroMessageMarkup() {
   return `<p class="grid-placeholder">${t('introMessage')}</p>`;
 }
@@ -164,7 +169,9 @@ function applyTranslations() {
 
   topLinks?.setAttribute('aria-label', t('quickLinksAria'));
   if (topLinksToggle) {
-    topLinksToggle.textContent = t('quickLinksToggle');
+    topLinksToggle.textContent = isMobileTopLinksLayout()
+      ? `☰ ${t('quickLinksLinks')}`
+      : t('quickLinksToggle');
   }
 
   const languageSwitch = document.querySelector('.language-switch');
@@ -177,6 +184,13 @@ function applyTranslations() {
   if (langSvBtn && langEnBtn) {
     langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
     langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
+    if (isMobileTopLinksLayout()) {
+      langSvBtn.textContent = 'SE';
+      langEnBtn.textContent = 'EN';
+    } else {
+      langSvBtn.textContent = 'Svenska';
+      langEnBtn.textContent = 'English';
+    }
   }
 
   const subtitle = document.querySelector('.subtitle');
@@ -596,5 +610,10 @@ setupLanguageSelector();
 setupTopLinksMenu();
 setupCookieBanner();
 setupSnackModal();
+
+mobileTopLinksMedia.addEventListener('change', () => {
+  applyTranslations();
+});
+
 applyTranslations();
 loadSnacks();
