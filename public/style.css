@@ -18,12 +18,14 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   padding: 2rem clamp(1rem, 5vw, 4rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
 .page-shell {
   width: min(1200px, 100%);
-  margin: 0 auto;
 }
 
 main.page-shell {
