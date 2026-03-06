@@ -83,10 +83,11 @@ main.page-shell {
   gap: 0.35rem;
   font-weight: 600;
   color: var(--muted);
+  width: min(360px, 100%);
 }
 
 .search-field input {
-  width: min(360px, 85vw);
+  width: 100%;
   border-radius: 999px;
   border: 2px solid rgba(255, 255, 255, 0.45);
   background: rgba(255, 255, 255, 0.16);
