@@ -14,6 +14,145 @@ const SNACKS_PATH = path.join(DATA_DIR, 'snacks.json');
 const NEWS_PATH = path.join(DATA_DIR, 'news.json');
 const GUIDES_PATH = path.join(DATA_DIR, 'guides.json');
 const LINKS_PATH = path.join(DATA_DIR, 'links.json');
+const PUBLIC_DIR = path.join(__dirname, 'public');
+const RECIPE_PAGES_DIR = path.join(PUBLIC_DIR, 'recept');
+const SITE_URL = (process.env.SITE_URL || 'https://energiknatte.se').replace(/\/$/, '');
+
+const escapeHtml = value => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#39;');
+
+const slugify = (value = '') => String(value)
+  .normalize('NFKD')
+  .toLowerCase()
+  .replace(/[^a-z0-9\s-]/g, '')
+  .trim()
+  .replace(/\s+/g, '-')
+  .replace(/-+/g, '-');
+
+const createRecipePageHtml = ({ snack, slug }) => {
+  const canonical = `${SITE_URL}/recept/${slug}.html`;
+  const recipeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Recipe',
+    name: snack.name,
+    description: snack.boost,
+    totalTime: snack.time,
+    recipeCategory: 'Mellanmål',
+    keywords: Array.isArray(snack.moods) ? snack.moods.join(', ') : '',
+    recipeIngredient: snack.ingredients,
+    recipeInstructions: snack.instructions.map(text => ({
+      '@type': 'HowToStep',
+      text,
+    })),
+    nutrition: {
+      '@type': 'NutritionInformation',
+      calories: snack.energy,
+    },
+  };
+
+  return `<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${escapeHtml(snack.name)} | Energiknatte</title>
+  <meta name="description" content="${escapeHtml(snack.boost)}" />
+  <link rel="canonical" href="${canonical}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="${escapeHtml(snack.name)}" />
+  <meta property="og:description" content="${escapeHtml(snack.boost)}" />
+  <meta property="og:url" content="${canonical}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4447589580139887" crossorigin="anonymous"></script>
+  <script type="application/ld+json">${JSON.stringify(recipeSchema)}</script>
+</head>
+<body>
+  <main style="max-width: 920px; margin: 0 auto; display: grid; gap: 1.5rem;">
+    <nav><a class="top-link-btn" href="/">← Till startsidan</a> <a class="top-link-btn" href="/recept/index.html">Alla recept</a></nav>
+    <article class="snack-card" style="background:${escapeHtml(snack.color || '#ffbe0b')}; color: #13072e;">
+      <p class="time">${escapeHtml(snack.time)}</p>
+      <h1>${escapeHtml(snack.name)}</h1>
+      <p><strong>Energi:</strong> ${escapeHtml(snack.energy)}</p>
+      <p>${escapeHtml(snack.boost)}</p>
+      <h2>Ingredienser</h2>
+      <ul>${snack.ingredients.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      <h2>Gör så här</h2>
+      <ol>${snack.instructions.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
+    </article>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4447589580139887"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </main>
+</body>
+</html>`;
+};
+
+const generateRecipePages = snacks => {
+  fs.mkdirSync(RECIPE_PAGES_DIR, { recursive: true });
+
+  const existingPages = fs.readdirSync(RECIPE_PAGES_DIR).filter(file => file.endsWith('.html'));
+  existingPages.forEach(file => fs.unlinkSync(path.join(RECIPE_PAGES_DIR, file)));
+
+  const usedSlugs = new Set();
+  const pages = snacks.map((snack, index) => {
+    const baseSlug = slugify(snack.name) || `recept-${index + 1}`;
+    let slug = baseSlug;
+    let i = 2;
+    while (usedSlugs.has(slug)) {
+      slug = `${baseSlug}-${i}`;
+      i += 1;
+    }
+    usedSlugs.add(slug);
+
+    const html = createRecipePageHtml({ snack, slug });
+    fs.writeFileSync(path.join(RECIPE_PAGES_DIR, `${slug}.html`), html);
+    return { slug, snack };
+  });
+
+  const listItems = pages
+    .map(({ slug, snack }) => `<li><a href="/recept/${slug}.html">${escapeHtml(snack.name)}</a> – ${escapeHtml(snack.energy)}</li>`)
+    .join('');
+
+  const indexHtml = `<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alla mellanmålsrecept | Energiknatte</title>
+  <meta name="description" content="Index över Energiknattes mellanmålsrecept för bättre indexering i Google." />
+  <link rel="canonical" href="${SITE_URL}/recept/index.html" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main style="max-width: 920px; margin: 0 auto;">
+    <h1>Alla recept</h1>
+    <p><a class="top-link-btn" href="/">Till startsidan</a></p>
+    <ul>${listItems}</ul>
+  </main>
+</body>
+</html>`;
+  fs.writeFileSync(path.join(RECIPE_PAGES_DIR, 'index.html'), indexHtml);
+
+  const staticPaths = ['/', '/om-oss.html', '/integritetspolicy.html', '/nyheter.html', '/guider.html', '/lankar.html', '/recept/index.html'];
+  const recipePaths = pages.map(({ slug }) => `/recept/${slug}.html`);
+  const allUrls = [...staticPaths, ...recipePaths];
+  const now = new Date().toISOString();
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(url => `  <url><loc>${SITE_URL}${url}</loc><lastmod>${now}</lastmod></url>`).join('\n')}
+</urlset>`;
+
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap);
+};
 
 const ensureDataFile = ({ targetPath, seedPath, fallback = [] }) => {
   if (fs.existsSync(targetPath)) {
@@ -58,8 +197,10 @@ const writeGuides = guides => writeArrayFile(GUIDES_PATH, guides);
 const readLinks = () => readArrayFile(LINKS_PATH, []);
 const writeLinks = links => writeArrayFile(LINKS_PATH, links);
 
+generateRecipePages(readSnacks());
+
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(PUBLIC_DIR));
 
 app.get('/admin', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
@@ -103,6 +244,7 @@ app.post('/api/snacks', (req, res) => {
 
   snacks.push(normalized);
   writeSnacks(snacks);
+  generateRecipePages(snacks);
   return res.status(201).json(normalized);
 });
 
@@ -152,6 +294,7 @@ app.put('/api/snacks/:name', (req, res) => {
 
   snacks[index] = updated;
   writeSnacks(snacks);
+  generateRecipePages(snacks);
   return res.json(updated);
 });
 
@@ -169,6 +312,7 @@ app.delete('/api/snacks/:name', (req, res) => {
   }
 
   writeSnacks(filtered);
+  generateRecipePages(filtered);
   return res.json({ ok: true });
 });
 
