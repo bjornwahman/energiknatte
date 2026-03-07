@@ -30,7 +30,12 @@ body {
 
 main.page-shell {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.2rem;
+}
+
+main.page-shell > * {
+  min-width: 0;
 }
 
 .hero {
