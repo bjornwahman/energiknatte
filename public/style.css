@@ -286,12 +286,25 @@ body.is-modal-open {
   .page-shell {
     width: 100%;
   }
-  .hero { flex-direction: column; text-align: center; }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   .hero > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .hero img,
+  .subtitle,
+  .search-field {
+    margin-inline: auto;
+  }
+  .search-field {
+    text-align: center;
   }
   .cta-row { align-items: center; }
 
