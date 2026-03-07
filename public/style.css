@@ -84,6 +84,7 @@ main.page-shell {
   font-weight: 600;
   color: var(--muted);
   width: min(250px, 100%);
+  margin-inline: auto;
 }
 
 .search-field input {
@@ -286,6 +287,12 @@ body.is-modal-open {
     width: 100%;
   }
   .hero { flex-direction: column; text-align: center; }
+  .hero > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .cta-row { align-items: center; }
 
   .snack-modal {
