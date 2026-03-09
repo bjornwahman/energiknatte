@@ -43,6 +43,7 @@
         loadError: 'Kunde inte ladda guider just nu.',
         fetchError: 'Kunde inte hämta guider',
         fallbackTitle: 'Guide',
+        readMore: 'Läs guide',
       },
       en: {
         pageTitle: 'Guides – Energiknatte',
@@ -55,6 +56,7 @@
         loadError: 'Could not load guides right now.',
         fetchError: 'Could not fetch guides',
         fallbackTitle: 'Guide',
+        readMore: 'Read guide',
       },
     };
 
@@ -96,9 +98,11 @@
       items.forEach(item => {
         const article = document.createElement('article');
         article.className = 'news-item';
+
         const h3 = document.createElement('h3');
         h3.textContent = item.title || t('fallbackTitle');
         article.appendChild(h3);
+
         const dateText = formatDate(item.createdAt);
         if (dateText) {
           const date = document.createElement('p');
@@ -106,9 +110,19 @@
           date.textContent = dateText;
           article.appendChild(date);
         }
-        const p = document.createElement('p');
-        p.textContent = item.content || '';
-        article.appendChild(p);
+
+        const preview = document.createElement('p');
+        preview.textContent = (item.content || '').slice(0, 180) + ((item.content || '').length > 180 ? '…' : '');
+        article.appendChild(preview);
+
+        if (item.id) {
+          const link = document.createElement('a');
+          link.className = 'top-link-btn';
+          link.href = `/guide.html?id=${encodeURIComponent(item.id)}`;
+          link.textContent = t('readMore');
+          article.appendChild(link);
+        }
+
         fragment.appendChild(article);
       });
       guidesList.appendChild(fragment);
