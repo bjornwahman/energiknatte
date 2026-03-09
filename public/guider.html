@@ -118,7 +118,7 @@
         if (item.id) {
           const link = document.createElement('a');
           link.className = 'top-link-btn';
-          link.href = `/guide.html?id=${encodeURIComponent(item.id)}`;
+          link.href = item.slug ? `/guider/${item.slug}.html` : `/guide.html?id=${encodeURIComponent(item.id)}`;
           link.textContent = t('readMore');
           article.appendChild(link);
         }
