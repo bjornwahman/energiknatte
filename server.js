@@ -141,7 +141,7 @@ const generateRecipePages = snacks => {
 </html>`;
   fs.writeFileSync(path.join(RECIPE_PAGES_DIR, 'index.html'), indexHtml);
 
-  const staticPaths = ['/', '/om-oss.html', '/integritetspolicy.html', '/nyheter.html', '/guider.html', '/lankar.html', '/recept/index.html'];
+  const staticPaths = ['/', '/om-oss.html', '/integritetspolicy.html', '/nyheter.html', '/guider.html', '/guide.html', '/lankar.html', '/recept/index.html'];
   const recipePaths = pages.map(({ slug }) => `/recept/${slug}.html`);
   const allUrls = [...staticPaths, ...recipePaths];
   const now = new Date().toISOString();
@@ -355,6 +355,21 @@ app.delete('/api/news/:id', (req, res) => {
 
 app.get('/api/guides', (_req, res) => {
   res.json(readGuides());
+});
+
+
+app.get('/api/guides/:id', (req, res) => {
+  const id = String(req.params.id || '').trim();
+  if (!id) {
+    return res.status(400).json({ error: 'Id saknas' });
+  }
+
+  const guide = readGuides().find(item => item.id === id);
+  if (!guide) {
+    return res.status(404).json({ error: 'Guiden hittades inte' });
+  }
+
+  return res.json(guide);
 });
 
 app.post('/api/guides', (req, res) => {
