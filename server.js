@@ -16,6 +16,7 @@ const GUIDES_PATH = path.join(DATA_DIR, 'guides.json');
 const LINKS_PATH = path.join(DATA_DIR, 'links.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const RECIPE_PAGES_DIR = path.join(PUBLIC_DIR, 'recept');
+const GUIDE_PAGES_DIR = path.join(PUBLIC_DIR, 'guider');
 const SITE_URL = (process.env.SITE_URL || 'https://energiknatte.se').replace(/\/$/, '');
 
 const escapeHtml = value => String(value)
@@ -95,6 +96,56 @@ const createRecipePageHtml = ({ snack, slug }) => {
 </html>`;
 };
 
+const createGuidePageHtml = ({ guide, slug }) => {
+  const canonical = `${SITE_URL}/guider/${slug}.html`;
+  const createdAt = new Date(guide.createdAt || '');
+  const dateText = Number.isNaN(createdAt.getTime())
+    ? ''
+    : createdAt.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  return `<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${escapeHtml(guide.title || 'Guide')} | Energiknatte</title>
+  <meta name="description" content="${escapeHtml((guide.content || '').slice(0, 155))}" />
+  <link rel="canonical" href="${canonical}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="${escapeHtml(guide.title || 'Guide')}" />
+  <meta property="og:description" content="${escapeHtml((guide.content || '').slice(0, 200))}" />
+  <meta property="og:url" content="${canonical}" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="info-page">
+    <a class="back-link" href="/guider.html">← Tillbaka till guider</a>
+    <article class="news-item">
+      <h1>${escapeHtml(guide.title || 'Guide')}</h1>
+      ${dateText ? `<p class="news-date">${escapeHtml(dateText)}</p>` : ''}
+      <p>${escapeHtml(guide.content || '')}</p>
+    </article>
+  </main>
+</body>
+</html>`;
+};
+
+const generateSitemap = ({ recipePages = [], guidePages = [] }) => {
+  const staticPaths = ['/', '/om-oss.html', '/integritetspolicy.html', '/nyheter.html', '/guider.html', '/lankar.html', '/recept/index.html'];
+  const recipePaths = recipePages.map(({ slug }) => `/recept/${slug}.html`);
+  const guidePaths = guidePages.map(({ slug }) => `/guider/${slug}.html`);
+  const allUrls = [...staticPaths, ...recipePaths, ...guidePaths];
+  const now = new Date().toISOString();
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(url => `  <url><loc>${SITE_URL}${url}</loc><lastmod>${now}</lastmod></url>`).join('\n')}
+</urlset>`;
+
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap);
+};
+
 const generateRecipePages = snacks => {
   fs.mkdirSync(RECIPE_PAGES_DIR, { recursive: true });
 
@@ -138,20 +189,42 @@ const generateRecipePages = snacks => {
     <ul>${listItems}</ul>
   </main>
 </body>
-</html>`;
+  </html>`;
   fs.writeFileSync(path.join(RECIPE_PAGES_DIR, 'index.html'), indexHtml);
 
-  const staticPaths = ['/', '/om-oss.html', '/integritetspolicy.html', '/nyheter.html', '/guider.html', '/guide.html', '/lankar.html', '/recept/index.html'];
-  const recipePaths = pages.map(({ slug }) => `/recept/${slug}.html`);
-  const allUrls = [...staticPaths, ...recipePaths];
-  const now = new Date().toISOString();
+  return pages;
+};
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(url => `  <url><loc>${SITE_URL}${url}</loc><lastmod>${now}</lastmod></url>`).join('\n')}
-</urlset>`;
+const generateGuidePages = guides => {
+  fs.mkdirSync(GUIDE_PAGES_DIR, { recursive: true });
 
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemap);
+  const existingPages = fs.readdirSync(GUIDE_PAGES_DIR).filter(file => file.endsWith('.html'));
+  existingPages.forEach(file => fs.unlinkSync(path.join(GUIDE_PAGES_DIR, file)));
+
+  const guidePages = guidesWithSlugs(guides);
+
+  guidePages.forEach(({ slug, guide }) => {
+    const html = createGuidePageHtml({ guide, slug });
+    fs.writeFileSync(path.join(GUIDE_PAGES_DIR, `${slug}.html`), html);
+  });
+
+  return guidePages;
+};
+
+const guidesWithSlugs = guides => {
+  const usedSlugs = new Set();
+  return guides.map((guide, index) => {
+    const baseSlug = slugify(guide.title) || slugify(guide.id) || `guide-${index + 1}`;
+    let slug = baseSlug;
+    let i = 2;
+    while (usedSlugs.has(slug)) {
+      slug = `${baseSlug}-${i}`;
+      i += 1;
+    }
+    usedSlugs.add(slug);
+
+    return { slug, guide };
+  });
 };
 
 const ensureDataFile = ({ targetPath, seedPath, fallback = [] }) => {
@@ -197,7 +270,13 @@ const writeGuides = guides => writeArrayFile(GUIDES_PATH, guides);
 const readLinks = () => readArrayFile(LINKS_PATH, []);
 const writeLinks = links => writeArrayFile(LINKS_PATH, links);
 
-generateRecipePages(readSnacks());
+const refreshGeneratedPages = () => {
+  const recipePages = generateRecipePages(readSnacks());
+  const guidePages = generateGuidePages(readGuides());
+  generateSitemap({ recipePages, guidePages });
+};
+
+refreshGeneratedPages();
 
 app.use(express.json());
 app.use(express.static(PUBLIC_DIR));
@@ -244,7 +323,7 @@ app.post('/api/snacks', (req, res) => {
 
   snacks.push(normalized);
   writeSnacks(snacks);
-  generateRecipePages(snacks);
+  refreshGeneratedPages();
   return res.status(201).json(normalized);
 });
 
@@ -294,7 +373,7 @@ app.put('/api/snacks/:name', (req, res) => {
 
   snacks[index] = updated;
   writeSnacks(snacks);
-  generateRecipePages(snacks);
+  refreshGeneratedPages();
   return res.json(updated);
 });
 
@@ -312,7 +391,7 @@ app.delete('/api/snacks/:name', (req, res) => {
   }
 
   writeSnacks(filtered);
-  generateRecipePages(filtered);
+  refreshGeneratedPages();
   return res.json({ ok: true });
 });
 
@@ -354,7 +433,9 @@ app.delete('/api/news/:id', (req, res) => {
 });
 
 app.get('/api/guides', (_req, res) => {
-  res.json(readGuides());
+  const guides = readGuides();
+  const payload = guidesWithSlugs(guides).map(({ slug, guide }) => ({ ...guide, slug }));
+  res.json(payload);
 });
 
 
@@ -385,6 +466,7 @@ app.post('/api/guides', (req, res) => {
   const item = { id: makeId(), title, content, createdAt: new Date().toISOString() };
   guides.unshift(item);
   writeGuides(guides);
+  refreshGeneratedPages();
   return res.status(201).json(item);
 });
 
@@ -401,6 +483,7 @@ app.delete('/api/guides/:id', (req, res) => {
   }
 
   writeGuides(filtered);
+  refreshGeneratedPages();
   return res.json({ ok: true });
 });
 
