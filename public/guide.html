@@ -30,6 +30,16 @@
         : d.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
     };
 
+    async function loadFromStaticData() {
+      const res = await fetch('/guides.json');
+      if (!res.ok) {
+        throw new Error('Kunde inte läsa statiska guider');
+      }
+
+      const items = await res.json();
+      return items.find(item => item.id === guideId);
+    }
+
     async function loadGuide() {
       if (!guideId) {
         titleEl.textContent = 'Guide saknas';
@@ -38,12 +48,22 @@
       }
 
       try {
-        const res = await fetch(`/api/guides/${encodeURIComponent(guideId)}`);
-        if (!res.ok) {
-          throw new Error('Kunde inte hämta guide');
+        let item;
+
+        try {
+          const res = await fetch(`/api/guides/${encodeURIComponent(guideId)}`);
+          if (!res.ok) {
+            throw new Error('Kunde inte hämta guide');
+          }
+          item = await res.json();
+        } catch (_apiError) {
+          item = await loadFromStaticData();
         }
 
-        const item = await res.json();
+        if (!item) {
+          throw new Error('Guide hittades inte');
+        }
+
         titleEl.textContent = item.title || 'Guide';
         const dateText = formatDate(item.createdAt);
         dateEl.textContent = dateText;

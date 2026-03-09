@@ -87,6 +87,31 @@
         : d.toLocaleDateString(language === 'en' ? 'en-US' : 'sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
     };
 
+    const slugify = (value = '') => String(value)
+      .normalize('NFKD')
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+
+    function attachSlugs(items) {
+      const usedSlugs = new Set();
+      return items.map((item, index) => {
+        const baseSlug = slugify(item.title) || slugify(item.id) || `guide-${index + 1}`;
+        let slug = baseSlug;
+        let i = 2;
+
+        while (usedSlugs.has(slug)) {
+          slug = `${baseSlug}-${i}`;
+          i += 1;
+        }
+
+        usedSlugs.add(slug);
+        return { ...item, slug };
+      });
+    }
+
     function render(items) {
       guidesList.innerHTML = '';
       if (!items.length) {
@@ -152,7 +177,15 @@
         window.guideItems = items;
         render(items);
       } catch (_error) {
-        guidesList.innerHTML = `<p>${t('loadError')}</p>`;
+        try {
+          const staticRes = await fetch('/guides.json');
+          if (!staticRes.ok) throw new Error(t('fetchError'));
+          const items = attachSlugs(await staticRes.json());
+          window.guideItems = items;
+          render(items);
+        } catch (_fallbackError) {
+          guidesList.innerHTML = `<p>${t('loadError')}</p>`;
+        }
       }
     }
 
