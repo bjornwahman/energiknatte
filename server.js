@@ -15,6 +15,7 @@ const NEWS_PATH = path.join(DATA_DIR, 'news.json');
 const GUIDES_PATH = path.join(DATA_DIR, 'guides.json');
 const LINKS_PATH = path.join(DATA_DIR, 'links.json');
 const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_GUIDES_PATH = path.join(PUBLIC_DIR, 'guides.json');
 const RECIPE_PAGES_DIR = path.join(PUBLIC_DIR, 'recept');
 const GUIDE_PAGES_DIR = path.join(PUBLIC_DIR, 'guider');
 const SITE_URL = (process.env.SITE_URL || 'https://energiknatte.se').replace(/\/$/, '');
@@ -271,8 +272,10 @@ const readLinks = () => readArrayFile(LINKS_PATH, []);
 const writeLinks = links => writeArrayFile(LINKS_PATH, links);
 
 const refreshGeneratedPages = () => {
+  const guides = readGuides();
   const recipePages = generateRecipePages(readSnacks());
-  const guidePages = generateGuidePages(readGuides());
+  const guidePages = generateGuidePages(guides);
+  writeArrayFile(PUBLIC_GUIDES_PATH, guidesWithSlugs(guides).map(({ slug, guide }) => ({ ...guide, slug })));
   generateSitemap({ recipePages, guidePages });
 };
 
