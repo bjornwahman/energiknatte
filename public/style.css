@@ -82,6 +82,19 @@ main.page-shell > * {
   min-width: 240px;
 }
 
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .search-field {
   display: flex;
   flex-direction: column;
@@ -412,12 +425,23 @@ body.is-modal-open {
   font-weight: 600;
 }
 
+.page-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
 .lang-btn {
-  padding: 0.45rem 0.9rem;
+  min-width: 48px;
+  padding: 0.45rem 0.7rem;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.65);
   background: rgba(255,255,255,0.18);
   color: #fff;
+  font-size: 1.05rem;
+  line-height: 1;
   font-weight: 600;
 }
 
@@ -536,6 +560,10 @@ body.is-modal-open {
 
   .language-switch {
     flex-wrap: wrap;
+  }
+
+  .page-toolbar {
+    align-items: center;
   }
 
   .top-links-toggle {

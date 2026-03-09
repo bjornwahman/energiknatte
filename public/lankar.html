@@ -9,13 +9,13 @@
 </head>
 <body>
   <main class="info-page">
-    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
-      <span id="language-label">Språk:</span>
-      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
-      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    <div class="page-toolbar">
+      <div class="language-switch" aria-label="Language selector">
+        <button id="lang-sv" class="lang-btn" type="button" aria-label="Svenska" aria-pressed="true">🇸🇪</button>
+        <button id="lang-en" class="lang-btn" type="button" aria-label="English" aria-pressed="false">🇬🇧</button>
+      </div>
+      <a id="back-link" class="back-link" href="/">Tillbaka</a>
     </div>
-
-    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
     <h1 id="page-heading">Länkar</h1>
     <p id="page-description">Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.</p>
 
@@ -31,8 +31,7 @@
     const translations = {
       sv: {
         pageTitle: 'Länkar – Energiknatte',
-        languageLabel: 'Språk:',
-        backLink: '← Tillbaka till startsidan',
+        backLink: 'Tillbaka',
         heading: 'Länkar',
         description: 'Här samlar vi användbara resurser och länkar som kan vara hjälpsamma för familjer.',
         empty: 'Inga länkar publicerade ännu.',
@@ -42,8 +41,7 @@
       },
       en: {
         pageTitle: 'Links – Energiknatte',
-        languageLabel: 'Language:',
-        backLink: '← Back to homepage',
+        backLink: 'Back',
         heading: 'Links',
         description: 'Here we collect helpful resources and links for families.',
         empty: 'No links have been published yet.',
@@ -62,14 +60,13 @@
     function applyTranslations() {
       document.documentElement.lang = language;
       document.title = t('pageTitle');
-      document.getElementById('language-label').textContent = t('languageLabel');
       document.getElementById('back-link').textContent = t('backLink');
       document.getElementById('page-heading').textContent = t('heading');
       document.getElementById('page-description').textContent = t('description');
       langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
       langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
-      langSvBtn.textContent = 'Svenska';
-      langEnBtn.textContent = 'English';
+      langSvBtn.textContent = '🇸🇪';
+      langEnBtn.textContent = '🇬🇧';
     }
 
     function render(items) {

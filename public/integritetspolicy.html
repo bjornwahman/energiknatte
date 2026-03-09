@@ -9,13 +9,13 @@
 </head>
 <body>
   <main class="info-page">
-    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
-      <span id="language-label">Språk:</span>
-      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
-      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    <div class="page-toolbar">
+      <div class="language-switch" aria-label="Language selector">
+        <button id="lang-sv" class="lang-btn" type="button" aria-label="Svenska" aria-pressed="true">🇸🇪</button>
+        <button id="lang-en" class="lang-btn" type="button" aria-label="English" aria-pressed="false">🇬🇧</button>
+      </div>
+      <a id="back-link" class="back-link" href="/">Tillbaka</a>
     </div>
-
-    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
     <h1 id="page-heading">Integritetspolicy</h1>
     <p id="p1">
       Vi värnar om din integritet. På Energiknatte använder vi cookies för att förbättra funktionalitet,
@@ -39,8 +39,7 @@
     const translations = {
       sv: {
         pageTitle: 'Integritetspolicy – Energiknatte',
-        languageLabel: 'Språk:',
-        backLink: '← Tillbaka till startsidan',
+        backLink: 'Tillbaka',
         heading: 'Integritetspolicy',
         p1: 'Vi värnar om din integritet. På Energiknatte använder vi cookies för att förbättra funktionalitet, förstå hur sidan används och ge en bättre upplevelse.',
         p2: 'Vi visar också annonser för att kunna driva sidan eftersom vi inte är ett vinstdrivande företag. Annonsintäkter hjälper oss att hålla tjänsten gratis och tillgänglig.',
@@ -49,8 +48,7 @@
       },
       en: {
         pageTitle: 'Privacy Policy – Energiknatte',
-        languageLabel: 'Language:',
-        backLink: '← Back to homepage',
+        backLink: 'Back',
         heading: 'Privacy Policy',
         p1: 'We value your privacy. At Energiknatte, we use cookies to improve functionality, understand how the site is used, and provide a better experience.',
         p2: 'We also show ads to keep the site running since we are not a for-profit company. Advertising revenue helps us keep the service free and accessible.',
@@ -68,7 +66,6 @@
     function applyTranslations() {
       document.documentElement.lang = language;
       document.title = t('pageTitle');
-      document.getElementById('language-label').textContent = t('languageLabel');
       document.getElementById('back-link').textContent = t('backLink');
       document.getElementById('page-heading').textContent = t('heading');
       document.getElementById('p1').textContent = t('p1');
@@ -81,8 +78,8 @@
 
       langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
       langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
-      langSvBtn.textContent = 'Svenska';
-      langEnBtn.textContent = 'English';
+      langSvBtn.textContent = '🇸🇪';
+      langEnBtn.textContent = '🇬🇧';
     }
 
     function setLanguage(nextLanguage) {

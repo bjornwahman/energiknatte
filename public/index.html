@@ -20,9 +20,8 @@
 <body>
   <nav class="top-links page-shell" aria-label="Snabblänkar">
     <div class="language-switch" aria-label="Språkval">
-      <span id="language-label">Språk:</span>
-      <button id="lang-sv" type="button" class="lang-btn" aria-pressed="true">Svenska</button>
-      <button id="lang-en" type="button" class="lang-btn" aria-pressed="false">English</button>
+      <button id="lang-sv" type="button" class="lang-btn" aria-label="Svenska" aria-pressed="true">🇸🇪</button>
+      <button id="lang-en" type="button" class="lang-btn" aria-label="English" aria-pressed="false">🇬🇧</button>
     </div>
     <button class="top-links-toggle" type="button" aria-expanded="false" aria-controls="quick-links-menu">
       ☰ Snabblänkar
@@ -47,7 +46,7 @@
         <button id="random-btn">Ge mig ett mellanmål!</button>
         <button id="favorites-toggle" type="button">Visa favoriter</button>
         <label class="search-field" for="recipe-search">
-          <span id="search-label">Sök recept</span>
+          <span id="search-label" class="sr-only">Sök recept</span>
           <input id="recipe-search" type="search" placeholder="Sök på namn eller ingrediens" />
         </label>
       </div>
