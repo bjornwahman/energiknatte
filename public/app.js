@@ -8,7 +8,6 @@ const snackModalCard = document.getElementById('snack-modal-card');
 const snackModalClose = document.getElementById('snack-modal-close');
 const snackModalRefresh = document.getElementById('snack-modal-refresh');
 const searchLabel = document.getElementById('search-label');
-const languageLabel = document.getElementById('language-label');
 const langSvBtn = document.getElementById('lang-sv');
 const langEnBtn = document.getElementById('lang-en');
 
@@ -30,12 +29,11 @@ const translations = {
     quickLinksAria: 'Snabblänkar',
     quickLinksToggle: '☰ Snabblänkar',
     languageSelectorAria: 'Språkval',
-    languageLabel: 'Språk:',
     subtitle: 'Snabba mellanmål med hjärnbränsle för barn med ADHD',
     randomButton: 'Ge mig ett mellanmål!',
     showFavorites: 'Visa favoriter',
     back: 'Tillbaka',
-    searchLabel: 'Sök',
+    searchLabel: 'Sök recept',
     searchPlaceholder: 'Sök',
     logoAlt: 'Energiknatte logga',
     quickLinksPrivacy: 'Integritetspolicy',
@@ -63,12 +61,11 @@ const translations = {
     quickLinksAria: 'Quick links',
     quickLinksToggle: '☰ Quick links',
     languageSelectorAria: 'Language selector',
-    languageLabel: 'Language:',
     subtitle: 'Quick snacks with brain fuel for children with ADHD',
     randomButton: 'Give me a snack!',
     showFavorites: 'Show favorites',
     back: 'Back',
-    searchLabel: 'Search',
+    searchLabel: 'Search recipes',
     searchPlaceholder: 'Search',
     logoAlt: 'Energiknatte logo',
     quickLinksPrivacy: 'Privacy policy',
@@ -177,20 +174,11 @@ function applyTranslations() {
   const languageSwitch = document.querySelector('.language-switch');
   languageSwitch?.setAttribute('aria-label', t('languageSelectorAria'));
 
-  if (languageLabel) {
-    languageLabel.textContent = t('languageLabel');
-  }
-
   if (langSvBtn && langEnBtn) {
     langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
     langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
-    if (isMobileTopLinksLayout()) {
-      langSvBtn.textContent = 'SE';
-      langEnBtn.textContent = 'EN';
-    } else {
-      langSvBtn.textContent = 'Svenska';
-      langEnBtn.textContent = 'English';
-    }
+    langSvBtn.textContent = '🇸🇪';
+    langEnBtn.textContent = '🇬🇧';
   }
 
   const subtitle = document.querySelector('.subtitle');

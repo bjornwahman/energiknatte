@@ -9,13 +9,13 @@
 </head>
 <body>
   <main class="info-page">
-    <div class="language-switch" aria-label="Language selector" style="justify-content:flex-end; margin-bottom:1rem;">
-      <span id="language-label">Språk:</span>
-      <button id="lang-sv" class="lang-btn" type="button" aria-pressed="true">Svenska</button>
-      <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">English</button>
+    <div class="page-toolbar">
+      <div class="language-switch" aria-label="Language selector">
+        <button id="lang-sv" class="lang-btn" type="button" aria-label="Svenska" aria-pressed="true">🇸🇪</button>
+        <button id="lang-en" class="lang-btn" type="button" aria-label="English" aria-pressed="false">🇬🇧</button>
+      </div>
+      <a id="back-link" class="back-link" href="/">Tillbaka</a>
     </div>
-
-    <a id="back-link" class="back-link" href="/">← Tillbaka till startsidan</a>
     <h1 id="page-heading">Nyheter</h1>
     <p id="page-description">Här samlar vi nyheter om Energiknatte, nya recept och förbättringar i tjänsten.</p>
 
@@ -34,8 +34,7 @@
     const translations = {
       sv: {
         pageTitle: 'Nyheter – Energiknatte',
-        languageLabel: 'Språk:',
-        backLink: '← Tillbaka till startsidan',
+        backLink: 'Tillbaka',
         heading: 'Nyheter',
         description: 'Här samlar vi nyheter om Energiknatte, nya recept och förbättringar i tjänsten.',
         updates: 'Senaste uppdateringar',
@@ -46,8 +45,7 @@
       },
       en: {
         pageTitle: 'News – Energiknatte',
-        languageLabel: 'Language:',
-        backLink: '← Back to homepage',
+        backLink: 'Back',
         heading: 'News',
         description: 'Here we share updates about Energiknatte, new recipes, and improvements to the service.',
         updates: 'Latest updates',
@@ -67,15 +65,14 @@
     function applyTranslations() {
       document.documentElement.lang = language;
       document.title = t('pageTitle');
-      document.getElementById('language-label').textContent = t('languageLabel');
       document.getElementById('back-link').textContent = t('backLink');
       document.getElementById('page-heading').textContent = t('heading');
       document.getElementById('page-description').textContent = t('description');
       document.getElementById('updates-heading').textContent = t('updates');
       langSvBtn.setAttribute('aria-pressed', String(language === 'sv'));
       langEnBtn.setAttribute('aria-pressed', String(language === 'en'));
-      langSvBtn.textContent = 'Svenska';
-      langEnBtn.textContent = 'English';
+      langSvBtn.textContent = '🇸🇪';
+      langEnBtn.textContent = '🇬🇧';
     }
 
     function formatDate(value) {
