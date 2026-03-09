@@ -241,6 +241,26 @@ const ensureDataFile = ({ targetPath, seedPath, fallback = [] }) => {
   fs.writeFileSync(targetPath, JSON.stringify(fallback, null, 2));
 };
 
+const mergeMissingSeedItems = ({ targetPath, seedPath, getKey }) => {
+  if (!seedPath || !fs.existsSync(seedPath) || !fs.existsSync(targetPath)) {
+    return;
+  }
+
+  const targetItems = readArrayFile(targetPath, []);
+  const seedItems = readArrayFile(seedPath, []);
+  const existingKeys = new Set(targetItems.map(getKey).filter(Boolean));
+  const missingSeedItems = seedItems.filter(item => {
+    const key = getKey(item);
+    return key && !existingKeys.has(key);
+  });
+
+  if (!missingSeedItems.length) {
+    return;
+  }
+
+  writeArrayFile(targetPath, [...targetItems, ...missingSeedItems]);
+};
+
 const readArrayFile = (filePath, fallback = []) => {
   const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   return Array.isArray(parsed) ? parsed : fallback;
@@ -258,6 +278,8 @@ const initializeStorage = () => {
   ensureDataFile({ targetPath: NEWS_PATH, seedPath: SEED_NEWS_PATH, fallback: [] });
   ensureDataFile({ targetPath: GUIDES_PATH, seedPath: SEED_GUIDES_PATH, fallback: [] });
   ensureDataFile({ targetPath: LINKS_PATH, seedPath: SEED_LINKS_PATH, fallback: [] });
+
+  mergeMissingSeedItems({ targetPath: GUIDES_PATH, seedPath: SEED_GUIDES_PATH, getKey: item => item.id });
 };
 
 initializeStorage();
