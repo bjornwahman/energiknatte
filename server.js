@@ -18,7 +18,7 @@ const PUBLIC_DIR = path.join(__dirname, 'public');
 const PUBLIC_GUIDES_PATH = path.join(PUBLIC_DIR, 'guides.json');
 const RECIPE_PAGES_DIR = path.join(PUBLIC_DIR, 'recept');
 const GUIDE_PAGES_DIR = path.join(PUBLIC_DIR, 'guider');
-const SITE_URL = (process.env.SITE_URL || 'https://energiknatte.se').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://energiknatte.wahman.net').replace(/\/$/, '');
 
 const escapeHtml = value => String(value)
   .replaceAll('&', '&amp;')

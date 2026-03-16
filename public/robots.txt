@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://energiknatte.se/sitemap.xml
+Sitemap: https://energiknatte.wahman.net/sitemap.xml
